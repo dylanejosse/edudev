@@ -1,4 +1,36 @@
+h1{ 
+    font-family: 'Questrial', 'sans-serif';
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+h6 { 
+    font-size: 1.5rem;
+}
+
+.price { 
+    font-size : 0.8rem;
+}
+
 .top-section {
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: linear-gradient(#fff, #cfd4ff);
+}
+
+.home-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.title-section {
+    font-family: 'Questrial', 'sans-serif';
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.nav-title { 
+    font-family: 'Questrial', 'sans-serif';
+    font-size: 1.5rem;
+    font-weight: bold;
 }
