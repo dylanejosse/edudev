@@ -18,9 +18,9 @@ h6 {
     background: linear-gradient(#fff, #cfd4ff);
 }
 
-.home-section {
+.tech-section {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 75px;
 }
 
 .title-section {
@@ -33,4 +33,10 @@ h6 {
     font-family: 'Questrial', 'sans-serif';
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.languages-img { 
+    width: 120px;
+    height: 120px;
+    border-radius: 20%;
 }
