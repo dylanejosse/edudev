@@ -35,6 +35,10 @@ h6 {
     font-weight: bold;
 }
 
+.project-images { 
+    width: 100%;
+}
+
 .languages-img { 
     width: 120px;
     height: 120px;
@@ -44,7 +48,12 @@ h6 {
 .edudev-features {
     background-color: #fafbff; 
     border: solid 1px #d7daff;
-    border-radius: 3%;
+    border-radius: 2%;
+}
+
+.projects { 
+    border: solid 1px #d7daff;
+    border-radius: 1%;
 }
 
 h5 {
