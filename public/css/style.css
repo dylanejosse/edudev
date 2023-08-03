@@ -20,7 +20,7 @@ h6 {
 
 .tech-section {
     padding-top: 50px;
-    padding-bottom: 75px;
+    padding-bottom: 50px;
 }
 
 .title-section {
@@ -39,4 +39,14 @@ h6 {
     width: 120px;
     height: 120px;
     border-radius: 20%;
+}
+
+.edudev-features {
+    background-color: #fafbff; 
+    border: solid 1px #d7daff;
+    border-radius: 3%;
+}
+
+h5 {
+    font-family: 'Questrial', 'sans-serif';
 }
