@@ -1,61 +1,102 @@
-h1{ 
+/* Main */
+
+h1
+{ 
     font-family: 'Questrial', 'sans-serif';
     font-size: 4rem;
     font-weight: bold;
 }
 
-h6 { 
+h5 
+{
+    font-family: 'Questrial', 'sans-serif';
+}
+
+h6 
+{ 
     font-size: 1.5rem;
 }
 
-.price { 
-    font-size : 0.8rem;
+.nav-title 
+{ 
+    font-family: 'Questrial', 'sans-serif';
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.top-section {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    background: linear-gradient(#fff, #cfd4ff);
-}
-
-.tech-section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.title-section {
+.title-section 
+{
     font-family: 'Questrial', 'sans-serif';
     font-size: 2.5rem;
     font-weight: bold;
 }
 
-.nav-title { 
-    font-family: 'Questrial', 'sans-serif';
-    font-size: 1.5rem;
-    font-weight: bold;
+.tech-section 
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
-.project-images { 
-    width: 100%;
+/* Home page */
+    /* Top section */
+
+.top-section 
+{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: linear-gradient(#fff, #cfd4ff);
 }
 
-.languages-img { 
-    width: 120px;
-    height: 120px;
-    border-radius: 20%;
+.price 
+{ 
+    font-size : 0.8rem;
 }
 
-.edudev-features {
+    /* Popular project */
+
+.projects 
+{ 
+    border: solid 1px #d7daff;
+    border-radius: 1%;
+}
+
+.projects:hover 
+{ 
+    background-color: #f0f1f9;
+}
+
+.project-image 
+{ 
+    border-radius: 10%;
+}
+
+    /* Edudev's utility */
+
+.edudev-features 
+{
     background-color: #fafbff; 
     border: solid 1px #d7daff;
     border-radius: 2%;
 }
 
-.projects { 
-    border: solid 1px #d7daff;
-    border-radius: 1%;
+.edudev-student 
+{
+    background-color: #fafffd; 
+    border: solid 1px #71b194;
+    border-radius: 2%;
 }
 
-h5 {
-    font-family: 'Questrial', 'sans-serif';
+/* Select the right sections to display */
+.none-class
+{
+   display: none;
+}
+
+    /* Technologie's list */
+
+.languages-img 
+{ 
+    width: 120px;
+    height: 120px;
+    border-radius: 20%;
 }
