@@ -17,4 +17,14 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    /**
+     * @Route("/a-propos-de-nous", name="app_home_about_us")
+     */
+    public function aboutUs(): Response
+    {
+        return $this->render('home/aboutUs.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
 }

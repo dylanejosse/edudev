@@ -27,13 +27,14 @@ h5
     font-family: 'Questrial', 'sans-serif';
 }
 
-h6 
+h2 
 { 
     font-size: 1.5rem;
 }
 
 .nav-title 
 { 
+    text-decoration: none;
     font-family: 'Questrial', 'sans-serif';
     font-size: 1.5rem;
     font-weight: bold;
@@ -51,6 +52,7 @@ h6
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
 
 /* Home page */
     /* Top section */
@@ -114,4 +116,14 @@ h6
     width: 120px;
     height: 120px;
     border-radius: 20%;
+}
+
+
+/* About Us Page */
+
+.top-about-us 
+{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: linear-gradient(#fff, #cfd4ff);
 }

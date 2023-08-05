@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
+<!-- Toggle's CSS -->
 <link rel="stylesheet" href="css/toggle.css">
 {% endblock %}
 
@@ -8,25 +9,25 @@
 
 {% block body %}
 
-    <section class="top-section d-flex justify-content-center align-items-center">
+<!-- Head of the Home Page -->
 
-        <div class="container">
+<section class="top-section d-flex justify-content-center align-items-center">
 
-            <div class="row">
+    <div class="container">
 
-                <div class="col-lg-8 col-12 mx-auto">
+        <div class="row">
 
-                    <div class="d-flex justify-content-center flex-wrap">
+            <div class="col-lg-8 col-12 mx-auto">
 
-                        <h1 class="text-center my-2">Des projets tech pour pratiquer</h1>
+                <div class="d-flex justify-content-center flex-wrap">
 
-                        <h6 class="text-center my-2">Rentrez en collaboration avec d'autres étudiants pour pouvoir développer vos compétences tech et élargir votre réseau.</h6>
+                    <h1 class="text-center my-2">Des projets tech pour pratiquer</h1>
 
-                        <a class="btn btn-success mt-3 mb-1 col-9 col-md-6 col-lg-3" href="">Déposer un projet</a>
+                    <h2 class="text-center my-2">Rentrez en collaboration avec d'autres étudiants pour pouvoir développer vos compétences tech et élargir votre réseau.</h6>
 
-                        <p class="price col-12 text-center text-muted">Et bien sûr, tout est gratuit.</p>
+                    <a class="btn btn-success mt-3 mb-1 col-9 col-md-6 col-lg-3" href="">Déposer un projet</a>
 
-                    </div>
+                    <p class="price col-12 text-center text-muted">Et bien sûr, tout est gratuit.</p>
 
                 </div>
 
@@ -34,82 +35,96 @@
 
         </div>
 
-    </section>
+    </div>
 
-    <section class="tech-section">
+</section>
 
-        <div class="container">
+<!-- Section about the highlighted project -->
 
-            <div class="row">
+<section class="tech-section">
 
-                <h2 class="title-section text-center my-2">Le Projet à la Une</h2>
+    <div class="container">
 
-                <div class="mx-auto d-flex flex-wrap my-2 justify-content-center">
+        <div class="row">
 
-                    <div class="projects p-3 col-12 col-xl-9 m-2 m-md-3 d-flex flex-wrap align-items-center text-center">
+            <h3 class="title-section text-center my-2">Le Projet à la Une</h3>
 
-                        <div class="col-12 col-md-5 mb-3 m-md-0 d-flex align-items-center justify-content-center">
-                            <img class="project-image col-6 col-md-10" src="images/javascript.png" alt="">
-                        </div>
+            <div class="mx-auto d-flex flex-wrap my-2 justify-content-center">
 
-                        <div class="col-12 col-md-5 m-auto">
-                            <h4 class="fw-bold">Edudev</h5>
-                            <p>Plateforme de mise en en relation d'étudiants dans le but de travailler ensemble sur des projets tech !</p>
-                            <h5 class="fw-bold">Technologie principale</h5>
-                            <p>Symfony</p>
-                            <h5 class="fw-bold">Stack Technique</h5>
-                            <p>Javascript, Twig, Bootstrap</p>
-                            <h5 class="fw-bold">Avancé du projet</h5>
-                            <p>En cours de développement</p>
-                            <h5 class="fw-bold">Profil recherché</h5>
-                            <p>Webdesigner, Scrum Master, Développeur Front-end</p>
-                        </div>
+                <div class="projects p-3 col-12 col-xl-9 m-2 m-md-3 d-flex flex-wrap align-items-center text-center">
+
+                    <!-- Project Image -->
+                    <div class="col-12 col-md-5 mb-3 m-md-0 d-flex align-items-center justify-content-center">
+                        <img class="project-image col-6 col-md-10" src="images/javascript.png" alt="">
                     </div>
+
+                    <!-- Project Details -->
+                    <div class="col-12 col-md-5 m-auto">
+                        <h4 class="fw-bold">Edudev</h5>
+                        <p>Plateforme de mise en en relation d'étudiants dans le but de travailler ensemble sur des projets tech !</p>
+                        <h5 class="fw-bold">Technologie principale</h5>
+                        <p>Symfony</p>
+                        <h5 class="fw-bold">Stack Technique</h5>
+                        <p>Javascript, Twig, Bootstrap</p>
+                        <h5 class="fw-bold">Avancé du projet</h5>
+                        <p>En cours de développement</p>
+                        <h5 class="fw-bold">Profil recherché</h5>
+                        <p>Webdesigner, Scrum Master, Développeur Front-end</p>
+                    </div>
+
+                </div>
             
-                </div>
-
-            </div>
-
-            <div class="d-flex align-items-center justify-content-center">
-                <a class="btn btn-success" href="">Voir tous les projets</a>
             </div>
 
         </div>
+
+        <!-- Button to discover other projects -->
+        <div class="d-flex align-items-center justify-content-center">
+            <a class="btn btn-success" href="">Voir tous les projets</a>
+        </div>
+
+    </div>
     
-    </section>
+</section>
 
-    <section class="tech-section">
+<!-- Section about the Edudev's profit -->
 
-        <div class="container">
+<section class="tech-section">
 
-            <div class="row">
+    <div class="container">
 
-                <h2 class="title-section text-center my-2">Une Utilisation Simple et Optimisé</h2>
+        <div class="row">
 
-                <div class="container my-2">
+            <h3 class="title-section text-center mt-2 mb-4">Une Utilisation Simple et Optimisé</h3>
 
-                    <div class="switches-container">
+            <!-- Toggle to know what informations need to be at screen -->
 
-                        <input type="radio" id="switchProjectOwner" name="switchUser" value="ProjectOwner" checked="checked" />
-                        <input type="radio" id="switchProjectParticipant" name="switchUser" value="ProjectParticipant" />
+            <div class="container my-2">
 
-                        <label for="switchProjectOwner" id="switchProjectOwnerLabel">Je propose</label>
-                        <label for="switchProjectParticipant" id="switchProjectParticipantLabel">Je cherche</label>
+                <div class="switches-container">
 
-                        <div class="switch-wrapper">
+                    <input type="radio" id="switchProjectOwner" name="switchUser" value="ProjectOwner" checked="checked" />
+                    <input type="radio" id="switchProjectParticipant" name="switchUser" value="ProjectParticipant" />
 
-                            <div class="switch">
-                                <div>Je propose</div>
-                                <div>Je cherche</div>
-                            </div>
+                    <label for="switchProjectOwner" id="switchProjectOwnerLabel">Je propose</label>
+                    <label for="switchProjectParticipant" id="switchProjectParticipantLabel">Je cherche</label>
 
+                    <div class="switch-wrapper">
+
+                        <div class="switch">
+                            <div>Je propose</div>
+                            <div>Je cherche</div>
                         </div>
 
                     </div>
 
                 </div>
 
-                <div class="owner-features">
+            </div>
+
+            <!-- Informations for owner's projects (Display bu default)-->
+
+            <div class="owner-features">
 
                 <div class="mx-auto d-flex flex-wrap my-2 justify-content-center">
 
@@ -141,13 +156,15 @@
                         </div>
                     </div>
 
-                    </div>
-
                 </div>
 
-                <div class="participant-features d-none">
+            </div>
 
-                    <div class="mx-auto d-flex flex-wrap my-2 justify-content-center">
+            <!-- Informations for participant projects (Display if the user click on the toggle) -->
+
+            <div class="participant-features d-none">
+
+                <div class="mx-auto d-flex flex-wrap my-2 justify-content-center">
 
                     <div class="edudev-student p-4 col-12 col-sm-5 m-2 m-md-3 d-flex justify-content-center">
                         <div>
@@ -177,110 +194,133 @@
                         </div>
                     </div>
 
-                    </div>
-
-                    </div>
-            
                 </div>
-
+            
             </div>
 
         </div>
+
+    </div>
     
-    </section>
+</section>
 
-    <section class="tech-section">
+<!-- Section famous technologies on Edudev -->
 
-        <div class="container">
+<section class="tech-section">
 
-            <div class="row">
+    <div class="container">
 
-                <h2 class="title-section text-center my-2">Des Technologies Populaires</h2>
+        <div class="row">
 
-                <div class="mx-auto d-flex flex-wrap my-2 justify-content-center">
+            <h3 class="title-section text-center mt-2 mb-4">Des Technologies Populaires</h3>
 
-                    <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/python.png" alt="">
-                    </div>
+            <div class="mx-auto d-flex flex-wrap my-2 justify-content-center">
 
-                    <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/javascript.png" alt="">
-                    </div>
+                <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/python.png" alt="">
+                </div>
 
-                    <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/swift.png" alt="">
-                    </div>
+                <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/javascript.png" alt="">
+                </div>
 
-                    <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/react.png" alt="">
-                    </div>
+                <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/swift.png" alt="">
+                </div>
 
-                    <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/java.png" alt="">
-                    </div>
+                <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/react.png" alt="">
+                </div>
 
-                    <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/symfony.png" alt="">
-                    </div>
+                <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/java.png" alt="">
+                </div>
 
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-sm-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/gcp.png" alt="">
-                    </div>
+                <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/symfony.png" alt="">
+                </div>
 
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-sm-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/azure.png" alt="">
-                    </div>
+                <div class="col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-sm-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/gcp.png" alt="">
+                </div>
 
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-sm-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/github.png" alt="">
-                    </div>
+                <div class="col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-sm-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/azure.png" alt="">
+                </div>
 
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-sm-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/flutter.png" alt="">
-                    </div>
+                <div class="col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-sm-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/github.png" alt="">
+                </div>
 
-                    <div class="col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-md-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/csharp.png" alt="">
-                    </div>
+                <div class="col-sm-4 col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-sm-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/flutter.png" alt="">
+                </div>
 
-                    <div class="col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-md-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/figma.png" alt="">
-                    </div>
+                <div class="col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-md-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/csharp.png" alt="">
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-md-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/figma.png" alt="">
+                </div>
                     
-                    <div class="col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-md-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/gitlab.png" alt="">
-                    </div>
-
-                    <div class="col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-md-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/angular.png" alt="">
-                    </div>
-
-                    <div class="col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-md-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/docker.png" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-lg-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/nodejs.png" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-lg-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/laravel.png" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-lg-flex justify-content-center align-items-center">
-                        <img class="languages-img" src="images/rubyonrails.png" alt="">
-                    </div>
-            
+                <div class="col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-md-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/gitlab.png" alt="">
                 </div>
 
+                <div class="col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-md-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/angular.png" alt="">
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-md-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/docker.png" alt="">
+                </div>
+
+                <div class="col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-lg-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/nodejs.png" alt="">
+                </div>
+
+                <div class="col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-lg-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/laravel.png" alt="">
+                </div>
+
+                <div class="col-lg-2 col-xxl-1 m-2 m-md-3 d-none d-lg-flex justify-content-center align-items-center">
+                    <img class="languages-img" src="images/rubyonrails.png" alt="">
+                </div>
+            
             </div>
 
         </div>
+
+    </div>
     
-    </section>
+</section>
+
+<section class="tech-section">
+
+    <div class="container">
+
+        <div class="row text-center">
+
+            <h3 class="title-section mt-2 mb-4">Soutenez-nous</h3>
+
+            <p>Supportez Edudev sur Patreon et aidez-nous à rendre ce projet encore meilleur.</p>
+
+            <p>Votre soutien veut dire beaucoup pour nous.</p>
+
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <a class="col-9 col-md-6 col-lg-4 col-xl-3 btn btn-success" href="">Supporter Edudev sur Patreon</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock %}
 
 {% block script %}
-    <script src="js/toggle.js"></script>
+<!-- Script for the Toggle -->
+<script src="js/toggle.js"></script>
 {% endblock %}
