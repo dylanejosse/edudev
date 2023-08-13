@@ -127,3 +127,26 @@ h2
     padding-bottom: 100px;
     background: linear-gradient(#fff, #cfd4ff);
 }
+
+
+/* Connexion Page */
+
+.connexion
+{
+    height: 100vh;
+}
+
+.connexion-block
+{
+    height: 80vh;
+    background-color: coral;
+    border-radius: 2%;
+}
+
+.connexion-img
+{
+    height: 100vh;
+    background-image: url("../images/connexion.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
