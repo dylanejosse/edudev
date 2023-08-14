@@ -156,3 +156,12 @@ h2
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/* Projects List Page */
+
+.top-projects-list 
+{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: linear-gradient(#fff, #cff3ff);
+}
