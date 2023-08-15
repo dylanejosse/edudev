@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -34,6 +36,37 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string")
      */
     private $password;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $username;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $study_level;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $time_available_week;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Technology::class, inversedBy="users")
+     */
+    private $technologies;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Project::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $projects;
+
+    public function __construct()
+    {
+        $this->technologies = new ArrayCollection();
+        $this->projects = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -122,5 +155,90 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function setUsername(?string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    public function getStudyLevel(): ?string
+    {
+        return $this->study_level;
+    }
+
+    public function setStudyLevel(?string $study_level): self
+    {
+        $this->study_level = $study_level;
+
+        return $this;
+    }
+
+    public function getTimeAvailableWeek(): ?string
+    {
+        return $this->time_available_week;
+    }
+
+    public function setTimeAvailableWeek(?string $time_available_week): self
+    {
+        $this->time_available_week = $time_available_week;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Technology>
+     */
+    public function getTechnologies(): Collection
+    {
+        return $this->technologies;
+    }
+
+    public function addTechnology(Technology $technology): self
+    {
+        if (!$this->technologies->contains($technology)) {
+            $this->technologies[] = $technology;
+        }
+
+        return $this;
+    }
+
+    public function removeTechnology(Technology $technology): self
+    {
+        $this->technologies->removeElement($technology);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Project>
+     */
+    public function getProjects(): Collection
+    {
+        return $this->projects;
+    }
+
+    public function addProject(Project $project): self
+    {
+        if (!$this->projects->contains($project)) {
+            $this->projects[] = $project;
+            $project->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProject(Project $project): self
+    {
+        if ($this->projects->removeElement($project)) {
+            // set the owning side to null (unless already changed)
+            if ($project->getUser() === $this) {
+                $project->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }
