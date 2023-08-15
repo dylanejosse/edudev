@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Project{% endblock %}
+
+{% block body %}
+<!-- Form Section -->
+<section>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center my-5">Proposer un nouveau projet</h1>
+
+            <div class="my-3">
+                {{ form(form) }}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

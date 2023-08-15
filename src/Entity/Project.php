@@ -80,6 +80,11 @@ class Project
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="string", length=2083)
+     */
+    private $image;
+
     public function __construct()
     {
         $this->technologies = new ArrayCollection();
@@ -242,6 +247,18 @@ class Project
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }
