@@ -49,8 +49,10 @@ class AddProjectType extends AbstractType
                         ->orderBy('t.name', 'ASC');
                         },
                 'choice_label' => 'name',
+                'attr' => [
+                    "class" => "d-flex flex-wrap",
+                ],
                 'multiple' => true,
-                'expanded' => true,
                 'required' => true,
                 'label' => 'Technologies utilisées sur ce projet',
                 ])
@@ -79,7 +81,6 @@ class AddProjectType extends AbstractType
                         "Swift" => "images/technologies/swift.png",
                     ],
                     'Outils Cloud' => [
-                        "AWS" => "images/technologies/aws.png",
                         "Azure" => "images/technologies/azure.png",
                         "Google Cloud Plateform" => "images/technologies/gcp.png",
                     ],
