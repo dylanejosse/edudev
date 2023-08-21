@@ -31,6 +31,7 @@ class ProjectController extends AbstractController
     {
 
         $project = new Project();
+        $currentUser = $this->getUser();
 
         $form = $this->createForm(AddProjectType::class, $project);
 
@@ -38,7 +39,6 @@ class ProjectController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
-            dd($this->getUser());
 
             $project->setName($data->getName());
             $project->setSummary($data->getSummary());
@@ -56,6 +56,8 @@ class ProjectController extends AbstractController
             $project->setStatus($data->getStatus());
             $project->setTimeNecessaryWeek($data->getTimeNecessaryWeek());
             $project->setImage($data->getImage());
+            $project->setUser($currentUser);
+
 
             $em->persist($project);
             $em->flush();
