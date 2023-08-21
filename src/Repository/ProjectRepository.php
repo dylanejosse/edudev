@@ -54,13 +54,13 @@ class ProjectRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Project
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    public function findLatestProject(): ?Project
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.createdAt', 'ASC')
+            ->setMaxResults(1)           
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
 }
