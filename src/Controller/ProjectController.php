@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Project;
 use App\Form\AddProjectType;
+use App\Repository\ProjectRepository;
 use DateTime;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
@@ -17,10 +18,12 @@ class ProjectController extends AbstractController
     /**
      * @Route("/project", name="app_project")
      */
-    public function index(): Response
+    public function index(ProjectRepository $projectRepository): Response
     {
-        return $this->render('project/projectsList.html.twig', [
-            'controller_name' => 'ProjectController',
+        $allProjects = $projectRepository->findAll();
+
+        return $this->render('project/list.html.twig', [
+            "allProjects" => $allProjects,
         ]);
     }
 

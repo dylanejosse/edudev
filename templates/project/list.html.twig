@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block body %}
+
+<section class="top-projects-list">
+
+    <div class="container">
+    
+        <div class="row col-12">
+
+            <div class="col-lg-8 col-12 mx-auto">
+
+                <div class="d-flex text-center justify-content-center flex-wrap">
+        
+                    <h1 class="my-2">Des projets en veux-tu ? En voilà !</h1>
+
+                    <h2 class="my-2">Retrouver dès maintenant la liste de tous les projets actuellement présentés sur Edudev !</h2>
+
+                    <p class="price col-12 text-muted mt-4">Encore et encore gratuit.</p>
+
+                </div>
+
+            </div>
+        
+        </div>
+
+    </div>
+
+</section>
+
+<section class="tech-section">
+
+        <div class="container-fluid">
+
+            <h3 class="title-section text-center my-2 p-0">Nos projets</h3>
+
+            <div class="d-flex flex-wrap justify-content-center">
+
+                <div class="projects p-3 col-11 col-xxl-5 my-2 m-md-3 d-flex flex-wrap align-items-center text-center">
+
+                    {% for project in allProjects %}
+                    <!-- Project Image -->
+                    <div class="col-12 col-md-5 mb-3 m-md-0 d-flex align-items-center justify-content-center">
+                        <img class="project-image col-6 col-md-10" src="{{ project.image }}" alt="">
+                    </div>
+
+                    <!-- Project Details -->
+                    <div class="col-12 col-md-5 m-auto">
+                        <h4 class="fw-bold">{{ project.name }}</h5>
+                        <p>{{ project.summary }}</p>
+                        <h5 class="fw-bold">Stack Technique</h5>
+                        <p>
+                        {% for techno in project.technologies %}
+                            {{ techno.name }} 
+                        {% endfor %}
+                        </p>
+                        <h5 class="fw-bold">Avancé du projet</h5>
+                        <p>{{ project.status }}</p>
+                        <h5 class="fw-bold">Cursus scolaire</h5>
+                        <p>{{ project.getStudyLevel() }}</p>
+                        <a class="btn btn-success" href="{{ path('app_project') }}">Découvrir</a>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            
+            </div>
+
+        </div>
+    
+</section>
+{% endblock %}
