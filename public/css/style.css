@@ -135,6 +135,26 @@ h2
     border-radius: 5%;
 }
 
+/* Registration Page */
+
+.register
+{
+    height: 100vh;
+}
+
+.register-img
+{
+    height: 100vh;
+    background-image: url("../images/register.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.register-block
+{
+    height: 80vh;
+    border-radius: 5%;
+}
 
 /* Connexion Page */
 

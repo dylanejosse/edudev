@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Edudev - {% block title %}{% endblock %}</title>
+        <title>Edudev - Login</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         
         {# Bootstrap link #}
@@ -53,9 +53,7 @@
                     <label for="inputPassword" class="mb-2">Mot de passe</label>
                     <input type="password" name="password" id="inputPassword" class="form-control mb-3" autocomplete="current-password" required>
 
-                    <input type="hidden" name="_csrf_token"
-                        value="{{ csrf_token('authenticate') }}"
-                    >
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
                     {#
                         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -72,7 +70,7 @@
                         Se connecter
                     </button>
 
-                    <a href="" class="btn btn-lg btn-light mb-3 p-0">Créer un compte</a>
+                    <a href="{{ path('app_register') }}" class="btn btn-lg btn-light mb-3 p-0">Créer un compte</a>
 
                 </form>
 
@@ -87,3 +85,4 @@
     </div>
 
 </section>
+</html>
