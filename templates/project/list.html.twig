@@ -36,11 +36,11 @@
 
             <h3 class="title-section text-center my-2 p-0">Nos projets</h3>
 
+            {% for project in allProjects %}
             <div class="d-flex flex-wrap justify-content-center">
 
                 <div class="projects p-3 col-11 col-xxl-5 my-2 m-md-3 d-flex flex-wrap align-items-center text-center">
 
-                    {% for project in allProjects %}
                     <!-- Project Image -->
                     <div class="col-12 col-md-5 mb-3 m-md-0 d-flex align-items-center justify-content-center">
                         <img class="project-image col-6 col-md-10" src="{{ project.image }}" alt="">
@@ -62,11 +62,11 @@
                         <p>{{ project.getStudyLevel() }}</p>
                         <a class="btn btn-success" href="TODO: Add the path of the current project">Découvrir</a>
                     </div>
-                    {% endfor %}
 
                 </div>
             
             </div>
+            {% endfor %}
 
         </div>
     

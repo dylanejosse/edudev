@@ -49,10 +49,8 @@ class AddProjectType extends AbstractType
                         ->orderBy('t.name', 'ASC');
                         },
                 'choice_label' => 'name',
-                'attr' => [
-                    "class" => "d-flex flex-wrap",
-                ],
                 'multiple' => true,
+                'expanded' => true,
                 'required' => true,
                 'label' => 'Technologies utilisées sur ce projet',
                 ])
