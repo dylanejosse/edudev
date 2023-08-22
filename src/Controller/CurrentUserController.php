@@ -3,9 +3,10 @@
 namespace App\Controller;
 
 use App\Repository\UserRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CurrentUserController extends AbstractController
 {
@@ -24,11 +25,13 @@ class CurrentUserController extends AbstractController
     /**
      * @Route("/mes-informations/delete", name="app_current_user_delete")
      */
-    public function delete(UserRepository $userRepository): Response
+    public function delete(UserRepository $userRepository, Request $request): Response
     {
         $currentUser = $this->getUser();
         $userRepository->remove($currentUser, true);
 
-        return $this->redirectToRoute('app_logout');
+        // This one is needed to kill the session's user before the redirection
+        $request->getSession()->invalidate();
+        return $this->redirectToRoute('app_home');
     }
 }
