@@ -27,7 +27,7 @@ class ProjectController extends AbstractController
      */
     public function index(ProjectRepository $projectRepository): Response
     {
-        $allProjects = $projectRepository->findAll();
+        $allProjects = $projectRepository->findProjectOrderedByCreatedDate();
 
         return $this->render('project/list.html.twig', [
             "allProjects" => $allProjects,

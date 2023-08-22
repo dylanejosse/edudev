@@ -82,7 +82,7 @@
                 {# Display for medium and + screen #}
                 {% if (app.user) %}
                     <a class="btn btn-danger mx-2 d-none d-lg-inline" href="{{ path('app_logout') }}">Déconnexion</a>
-                    <a class="btn btn-light mx-2 d-none d-lg-inline" href="">Mon profil</a>
+                    <a class="btn btn-light mx-2 d-none d-lg-inline" href="{{ path('app_current_user_informations') }}">Mon profil</a>
                 {% else %}
                     <a class="btn btn-success mx-2 d-none d-lg-inline" href="{{ path('app_login') }}">Connexion</a>
                     <a class="btn btn-light mx-2 d-none d-lg-inline" href="{{ path('app_register') }}">S'inscrire gratuitement</a>

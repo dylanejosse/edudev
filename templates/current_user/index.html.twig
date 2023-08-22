@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CurrentUserController!{% endblock %}
+
+{% block body %}
+<section>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center my-5">Mon Profil</h1>
+            <div class="col-12 d-flex justify-content-center">
+                <div class="col-6 d-flex justify-content-end me-1">
+                    <a class="btn btn-warning" href="">Modifier mes informations</a>
+                </div>
+                <div class="col-6 ms-1">
+                    <a class="btn btn-danger" href="{{ path("app_current_user_delete")}}">Supprimer mon compte</a>
+                </div>
+            </div>
+
+            <div class="my-3 d-flex flex-wrap justify-content-center">
+                <div class="text-center my-3 col-10">
+                    <p class="fw-bold fst-italic">Mon adresse mail</p>
+                    <p>{{ currentUser.email }}</p>
+                </div>
+                <div class="text-center my-3 col-10">
+                    <p class="fw-bold fst-italic">Mon Pseudo</p>
+                    <p>{{ currentUser.username }}</p>
+                </div>
+                <div class="text-center my-3 col-10">
+                    <p class="fw-bold fst-italic">Mon Niveau d'études</p>
+                    <p>{{ currentUser.getStudyLevel() }}</p>
+                </div>
+                <div class="text-center my-3 col-10">
+                    <p class="fw-bold fst-italic">Mon temps disponible par semaine</p>
+                    <p>{{ currentUser.getTimeAvailableWeek() }}</p>
+                </div>
+                <div class="text-center my-3 col-10">
+                    <p class="fw-bold fst-italic">Les technologies qui m'intéressent</p>
+                    <p>{% for techno in currentUser.technologies %}
+                    {{ techno.name }} 
+                    {% endfor %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

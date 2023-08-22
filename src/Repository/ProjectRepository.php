@@ -57,10 +57,19 @@ class ProjectRepository extends ServiceEntityRepository
     public function findLatestProject(): ?Project
     {
         return $this->createQueryBuilder('p')
-            ->orderBy('p.createdAt', 'ASC')
+            ->orderBy('p.createdAt', 'DESC')
             ->setMaxResults(1)           
             ->getQuery()
             ->getOneOrNullResult()
+        ;
+    }
+
+    public function findProjectOrderedByCreatedDate(): array
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.createdAt', 'DESC')           
+            ->getQuery()
+            ->getResult()
         ;
     }
 }
