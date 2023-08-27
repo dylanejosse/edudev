@@ -31,6 +31,7 @@ class CurrentUserController extends AbstractController
         $userRepository->remove($currentUser, true);
 
         // This one is needed to kill the session's user before the redirection
+        $this->get('security.token_storage')->setToken(null);
         $request->getSession()->invalidate();
         return $this->redirectToRoute('app_home');
     }
