@@ -69,6 +69,7 @@ class CurrentUserController extends AbstractController
 
             $em->flush($currentUser);
 
+            $this->addFlash("success", "Votre compte a bien été modifié");
             return $this->redirectToRoute("app_current_user_informations");
             
         }
