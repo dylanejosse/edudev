@@ -22,7 +22,8 @@ class AddProjectType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'label' => 'Nom du projet',
-                'label_attr' => ['class' => 'fw-bold my-2'],
+                'label_attr' => ['class' => 'fw-bold my-2',
+                "id" => 'name_project'],
                 'help' => "Inventivité et originalité sont ici demandées !",
                 'help_attr' => ['class' => 'fst-italic'],
                 'required' => true,
