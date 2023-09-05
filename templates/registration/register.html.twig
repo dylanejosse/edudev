@@ -23,6 +23,8 @@
         {% block javascripts %}{% endblock %}
     </head>
 
+<body>
+
 <section>
 
     <div class="d-flex align-items-center">
@@ -33,10 +35,12 @@
 
         <div class="d-flex register align-items-center col-12 col-xl-6 col-xxl-5">
 
+
             <div class="d-flex flex-wrap align-items-center justify-content-center col-11 register-block container bg-light">
 
 
-                {{ form_start(registrationForm) }}
+                {{ form_start(registrationForm, {attr: {"id": "registration_form", "novalidate":"novalidate"}}) }}
+                    <div class="errors"></div>
                     <div class="my-3">
                         <a href="{{ path('app_home') }}">Retour</a>
                     </div>
@@ -45,7 +49,8 @@
                         label: 'Adresse mail'
                     }) }}
                     {{ form_row(registrationForm.plainPassword, {
-                        label: 'Mot de passe'
+                        label: 'Mot de passe',
+                        help: "8 caractères min. Seuls les caractères spéciaux suivants sont disponibles: [.*/?-!%]"
                     }) }}
                     {{ form_row(registrationForm.agreeTerms, {
                         label: "J'accepte les conditions d'utilisation Edudev",
@@ -62,5 +67,11 @@
     </div>
 
 </section>
+
+{% block script %}
+    <script src="../js/validation/inscriptionValidation.js"></script>
+{% endblock %}
+
+</body>
 
 </html>
