@@ -198,7 +198,43 @@ h2
 
 /* Add A project */
 
-.form-check 
+#add_project_technologies
 {
-    width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: normal;
+}
+
+.col-form-label
+{
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+@media screen and (max-width: 768px) 
+{
+    #add_project_technologies .form-check 
+    {
+        width: 50%;
+        margin: 2px 0px;
+    }
+}
+
+@media screen and (min-width: 768px)
+{
+    #add_project_technologies .form-check 
+    {
+        width: 20%;
+        margin: 2px 0px;
+    }
+}
+
+.errors
+{
+   background-color: rgb(253, 231, 231);
+}
+
+.errors p
+{
+    padding: 0.25rem;
 }

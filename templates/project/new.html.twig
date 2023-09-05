@@ -2,6 +2,11 @@
 
 {% block title %}New Project{% endblock %}
 
+{% block stylesheets %}
+    {# My style.css Sheet's link #}
+    <link rel="stylesheet" href="../css/style.css">
+{% endblock %}
+
 {% block body %}
 <!-- Form Section -->
 <section>
@@ -10,9 +15,15 @@
             <h1 class="text-center my-5">Proposer un nouveau projet</h1>
 
             <div class="my-3">
-                {{ form(form) }}
+                <div class="errors rounded">
+                </div>
+                {{ form(form, {attr:{'novalidate': 'novalidate', 'id': "add_project_form"}}) }}
             </div>
         </div>
     </div>
 </section>
+{% endblock %}
+
+{% block script %}
+    <script src="../js/addProjectValidation.js"></script>
 {% endblock %}
