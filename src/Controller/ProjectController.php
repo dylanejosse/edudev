@@ -35,6 +35,18 @@ class ProjectController extends AbstractController
     }
 
     /**
+     * @Route("/project/{id}", name="app_project_display")
+     */
+    public function displayAproject(int $id, ProjectRepository $projectRepository): Response
+    {
+        $currentProject = $projectRepository->find($id);
+
+        return $this->render('project/list.html.twig', [
+            "currentProject" => $currentProject,
+        ]);
+    }    
+
+    /**
      * @Route("/add/project", name="app_add_project")
      */
     public function addProject(Request $request, EntityManagerInterface $em): Response
