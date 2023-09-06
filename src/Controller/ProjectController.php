@@ -41,7 +41,7 @@ class ProjectController extends AbstractController
     {
         $currentProject = $projectRepository->find($id);
 
-        return $this->render('project/list.html.twig', [
+        return $this->render('project/singleProject.html.twig', [
             "currentProject" => $currentProject,
         ]);
     }    
