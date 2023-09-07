@@ -238,3 +238,23 @@ h2
 {
     padding: 0.25rem;
 }
+
+/* Single Project Display Page */
+
+@media screen and (max-width: 768px) 
+{
+    .single-project-image
+    {
+        border-radius: 10%;
+        width: 120px;
+    }
+}
+
+@media screen and (min-width: 768px)
+{
+    .single-project-image
+    {
+        border-radius: 10%;
+        width: 180px;
+    }
+}
