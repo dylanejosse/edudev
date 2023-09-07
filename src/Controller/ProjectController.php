@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Project;
 use App\Form\AddProjectType;
 use App\Repository\ProjectRepository;
+use App\Repository\UserRepository;
 use DateTime;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
@@ -23,7 +24,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class ProjectController extends AbstractController
 {
     /**
-     * @Route("/project", name="app_project")
+     * @Route("/project", name="app_project_list")
      */
     public function index(ProjectRepository $projectRepository): Response
     {
@@ -37,12 +38,15 @@ class ProjectController extends AbstractController
     /**
      * @Route("/project/{id}", name="app_project_display")
      */
-    public function displayAproject(int $id, ProjectRepository $projectRepository): Response
+    public function displayAproject(int $id, ProjectRepository $projectRepository, UserRepository $userRepository): Response
     {
         $currentProject = $projectRepository->find($id);
 
+        $projectOwner = $userRepository->find($currentProject->getUser());
+
         return $this->render('project/singleProject.html.twig', [
             "currentProject" => $currentProject,
+            "projectOwner" => $projectOwner,
         ]);
     }    
 
