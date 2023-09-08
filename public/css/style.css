@@ -258,3 +258,52 @@ h2
         width: 180px;
     }
 }
+
+/* My profil Page */
+
+.section-profile
+{
+    height: 80vh;
+}
+
+.my-projects
+{
+    background-image: url('../images/mes_projets.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+}
+
+.my-projects:hover {
+    opacity: 0.6;
+}
+
+.my-informations
+{
+    background-image: url('../images/mes-informations.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+}
+
+.my-informations:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 768px) 
+{
+    .profile-part
+    {
+        height: 25vh;
+    }
+}
+
+@media screen and (min-width: 768px)
+{
+    .profile-part
+    {
+        height: 55vh;
+    }
+}
