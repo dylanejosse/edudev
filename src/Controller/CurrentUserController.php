@@ -13,8 +13,18 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 
 class CurrentUserController extends AbstractController
 {
+
     /**
-     * @Route("/mes-informations", name="app_current_user_informations")
+     * @Route("/mon-profil", name="app_current_user_profile")
+     */
+    public function allInformationsOfCurrentUer(UserRepository $userRepository): Response
+    {
+        return $this->render('current_user/home.html.twig', [
+        ]);
+    }
+
+    /**
+     * @Route("/mon-profil/informations", name="app_current_user_informations")
      */
     public function read(UserRepository $userRepository): Response
     {

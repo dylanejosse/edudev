@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Profil{% endblock %}
+
+{% block stylesheets %}
+{# My style.css Sheet's link #}
+<link rel="stylesheet" href="../css/style.css">
+{% endblock %}
+
+{% block body %}
+<section class="section-profile">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 p-3">
+                <h1 class="text-center my-5">Mon profil</h1>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-md-between col-12">
+                
+                <div class="my-projects profile-part d-flex align-items-center align-items-md-start justify-content-md-center col-12 col-md-5 col-lg-5 mb-3 m-md-0 border rounded">
+                    <a class="p-3 text-decoration-none col-3 col-md-12" href=""><h2 class="fw-bold text-white text-center">Mes projets</h2></a>
+                </div>
+
+                <div class="my-informations profile-part d-flex align-items-center align-items-md-start justify-content-md-center col-12 col-md-5 col-lg-5 mb-3 m-md-0 border rounded">
+                    <a class="p-3 text-decoration-none col-3 col-md-12" href="{{ path('app_current_user_informations') }}"><h2 class="fw-bold text-white text-center">Mes informations</h2></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
