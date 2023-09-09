@@ -148,7 +148,7 @@ class ProjectController extends AbstractController
             $em->flush();
 
             $this->addFlash("success", "Votre projet est maintenant en ligne !");
-            return $this->redirectToRoute('app_project');
+            return $this->redirectToRoute('app_project_list');
         }
 
         return $this->render('project/new.html.twig', [
