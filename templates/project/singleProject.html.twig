@@ -49,7 +49,7 @@
 
                     <div class="rounded p-3">
 
-                        <p>{{ currentProject.summary }}</p>
+                        <p class="text-break">{{ currentProject.summary }}</p>
 
                         <p>Pour contacter le chef de projet, veuillez le contacter par mail à l'adresse mail suivante : {{ projectOwner.email }}</p>
 
@@ -81,7 +81,7 @@
                 
                     <h3 class="fst-italic mb-3">Gros plan sur le projet</h3>
 
-                    <p><span class="fst-italic text-decoration-underline">Description </span>: {{ currentProject.description }}</p>
+                    <p class="text-break"><span class="fst-italic text-decoration-underline">Description </span>: {{ currentProject.description }}</p>
 
                     <p>Pour participer à ce projet, il est recommandé par le project owner d'un certain nombre d'heures par semaine. Ici, {{ currentProject.timeNecessaryWeek }} serait idéal !</p>
                 
@@ -106,7 +106,7 @@
                              {% endfor %}
                         </p>
 
-                        <p><span class="fst-italic text-decoration-underline">Besoin du projet </span>: {{ currentProject.needDescription }}</p>
+                        <p class="text-break"><span class="fst-italic text-decoration-underline">Besoin du projet </span>: {{ currentProject.needDescription }}</p>
                     
                     </div>
                 
