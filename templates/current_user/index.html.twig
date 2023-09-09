@@ -2,45 +2,111 @@
 
 {% block title %}Mon Profil{% endblock %}
 
+{% block stylesheets %}
+    {# My style.css Sheet's link #}
+    <link rel="stylesheet" href="../css/style.css">
+{% endblock %}
+
 {% block body %}
 <section>
-    <div class="container">
-        <div class="row">
-            <h1 class="text-center my-5">Mon Profil</h1>
-            <div class="col-12 d-flex justify-content-center">
-                <div class="col-6 d-flex justify-content-end me-1">
-                    <a class="btn btn-warning" href="{{ path("app_current_user_edit")}}">Modifier mes informations</a>
-                </div>
-                <div class="col-6 ms-1">
-                    <a class="btn btn-danger" href="{{ path("app_current_user_delete")}}">Supprimer mon compte</a>
-                </div>
-            </div>
 
-            <div class="my-3 d-flex flex-wrap justify-content-center">
-                <div class="card text-center my-3 col-10">
-                    <p class="fw-bold fst-italic">Mon adresse mail</p>
+    <div class="container d-flex flex-wrap">
+
+        <div class="row">
+
+            <h1 class="text-center my-5">Mon Profil</h1>
+            <p class="text-center mb-5">Retrouvez sur cette page l'ensemble des informations que vous avez pu renseigner lors de votre inscription ou de votre utilisation d'Edudev. Bien évidemment, le mot de passe n'apparaît pas, pour des raisons évidentes de sécurité !</p>
+
+            {# General Informations section #}
+
+            <section class="d-flex flex-wrap col-12 col-md-4 p-3 m-0">
+                
+                <h2 class="informations-profile text-center col-12">Informations générales</h2>
+
+                <div class="text-center mt-3 col-12">
+                    <p class="fw-bold">Mon adresse mail</p>
                     <p>{{ currentUser.email }}</p>
                 </div>
-                <div class="card text-center my-3 col-10">
-                    <p class="fw-bold fst-italic">Mon Pseudo</p>
+
+                <div class="text-center my-3 col-12">
+
+                    <p class="fw-bold">Mon Pseudo</p>
+                    {% if currentUser.username == false %}
+                    <p class="missing-information">Vous n'avez pas communiqué de pseudo</p>
+                    {% else %}
                     <p>{{ currentUser.username }}</p>
+                    {% endif %}
+                        
                 </div>
-                <div class="card text-center my-3 col-10">
-                    <p class="fw-bold fst-italic">Mon Niveau d'études</p>
-                    <p>{{ currentUser.getStudyLevel() }}</p>
+
+                <div class="col-12 d-none d-md-flex justify-content-center mb-3">
+                    <a class="col-6 btn btn-danger" href="{{ path("app_current_user_delete")}}">Supprimer le compte</a>
                 </div>
-                <div class="card text-center my-3 col-10">
-                    <p class="fw-bold fst-italic">Mon temps disponible par semaine</p>
-                    <p>{{ currentUser.getTimeAvailableWeek() }}</p>
+
+                <div class="col-12 d-none d-md-flex d-flex justify-content-center">
+                    <a class="col-6 btn btn-warning" href="{{ path("app_current_user_edit")}}">Modifier mon compte</a>
                 </div>
-                <div class="card text-center my-3 col-10">
-                    <p class="fw-bold fst-italic">Les technologies qui m'intéressent</p>
-                    <p>{% for techno in currentUser.technologies %}
-                    {{ techno.name }} 
-                    {% endfor %}</p>
-                </div>
+                
+            </section>
+
+            {# Disponibility and Skills #}
+
+            <section class="col-12 col-md-8 mb-3 m-md-0">
+
+                    <h2 class="informations-profile col-12 m-0 text-center p-3">Disponibilités et compétences</h2>
+
+                    <div class="col-12 d-flex flex-wrap align-items-start justify-content-md-between">
+
+                    <div class="text-center my-3 col-12 col-md-5 border rounded p-3">
+                        <p class="fw-bold">Mon Niveau d'études</p>
+
+                        {% if currentUser.studyLevel == false %}
+                        <p class="missing-information m-0">Vous n'avez pas communiqué votre niveau d'études</p>
+                        {% else %}
+                        <p class="m-0">{{ currentUser.studyLevel }}</p>
+                        {% endif %}
+                        </div>
+
+                    <div class="text-center my-3 col-12 col-md-5 border rounded p-3">
+                        <p class="fw-bold">Ma disponibilité (semaine)</p>
+
+                        {% if currentUser.timeAvailableWeek == false %}
+                        <p class="missing-information m-0">Vous n'avez pas communiqué vos disponibilté hebdomadaire</p>
+                        {% else %}
+                        <p class="m-0">{{ currentUser.timeAvailableWeek }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="text-center my-3 col-12 col-md-5 border rounded p-3">
+                        <p class="fw-bold">Les technologies qui m'intéressent</p>
+
+                        {# Verification if a technologie is specified by the user #}
+                        {% if currentUser.technologies|length > 0 %}
+                        {% for technologie in currentUser.technologies %}
+                        <p class="m-0">{{ technologie.name }}</p>
+                        {% endfor %}
+                        {% else %}
+                        <p class="missing-information m-0">Vous n'avez pas communiqué les technologies qui vous intéressent</p>
+                        {% endif %}
+    
+                    </div>
+
+                    </div>
+
+            </section>
+
+            <div class="col-12 d-flex d-md-none justify-content-center mb-3">
+                <a class="col-6 btn btn-danger" href="{{ path("app_current_user_delete")}}">Supprimer mon compte</a>
             </div>
+
+            <div class="col-12 d-flex d-md-none d-flex justify-content-center">
+                <a class="col-6 btn btn-warning" href="{{ path("app_current_user_edit")}}">Modifier mes informations</a>
+            </div>
+                
         </div>
+
     </div>
+
 </section>
+            
 {% endblock %}
