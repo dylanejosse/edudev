@@ -17,7 +17,7 @@ class CurrentUserController extends AbstractController
     /**
      * @Route("/mon-profil", name="app_current_user_profile")
      */
-    public function allInformationsOfCurrentUer(UserRepository $userRepository): Response
+    public function allInformationsOfCurrentUer(): Response
     {
         return $this->render('current_user/home.html.twig', [
         ]);
@@ -26,12 +26,24 @@ class CurrentUserController extends AbstractController
     /**
      * @Route("/mon-profil/informations", name="app_current_user_informations")
      */
-    public function read(UserRepository $userRepository): Response
+    public function myProfilInformations(UserRepository $userRepository): Response
     {
         $currentUser = $userRepository->find($this->getUser());
 
         return $this->render('current_user/index.html.twig', [
             'currentUser' => $currentUser,
+        ]);
+    }
+
+    /**
+     * @Route("/mon-profil/mes-projets", name="app_current_user_projects")
+     */
+    public function myProfileProjects(UserRepository $userRepository): Response
+    {
+        $currentUser = $userRepository->find($this->getUser());
+
+        return $this->render('current_user/myProjects.html.twig', [
+            "currentUser" => $currentUser,
         ]);
     }
 
