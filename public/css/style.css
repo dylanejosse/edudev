@@ -53,7 +53,6 @@ h2
     padding-bottom: 50px;
 }
 
-
 /* Home page */
     /* Top section */
 
@@ -322,4 +321,11 @@ h2
 .missing-information
 {
     color: rgb(249, 160, 160);
+}
+
+/* My projects page */
+
+.my-projects-list
+{
+    min-height: 90vh;
 }
