@@ -45,9 +45,12 @@ class ProjectController extends AbstractController
 
         $projectOwner = $userRepository->find($currentProject->getUser());
 
+        $currentUser = $this->getUser();
+
         return $this->render('project/singleProject.html.twig', [
             "currentProject" => $currentProject,
             "projectOwner" => $projectOwner,
+            "currentUser" => $currentUser,
         ]);
     }
     
@@ -58,11 +61,14 @@ class ProjectController extends AbstractController
     {
         $currentProject = $projectRepository->find($id);
 
-        $em->remove($currentProject);
-        $em->flush();
+        if ($this->getUser() === $currentProject->getUser())
+        {
+            $em->remove($currentProject);
+            $em->flush();
 
-        $this->addFlash('success', 'Votre projet a bien été supprimé !');
-        return $this->redirectToRoute('app_current_user_projects');
+            $this->addFlash('success', 'Votre projet a bien été supprimé !');
+            return $this->redirectToRoute('app_current_user_projects');
+        }
     }
 
     /**
@@ -76,31 +82,31 @@ class ProjectController extends AbstractController
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid())
+        if ($this->getUser() === $currentProject->getUser()) 
         {
-            $data = $form->getData();
+            if ($form->isSubmitted() && $form->isValid()) {
+                $data = $form->getData();
 
-            $currentProject->setName($data->getName());
-            $currentProject->setSummary($data->getSummary());
-            $currentProject->setDescription($data->getDescription());
-            $currentProject->setUpdatedAt(new DateTimeImmutable());
-            $currentProject->setStudyLevel($data->getStudyLevel());
-            $currentProject->setNeedDescription($data->getNeedDescription());
-            $currentProject->setDuration($data->getDuration());
-            $currentProject->setStatus($data->getStatus());
-            $currentProject->setTimeNecessaryWeek($data->getTimeNecessaryWeek());
-            $currentProject->setImage($data->getImage());
+                $currentProject->setName($data->getName());
+                $currentProject->setSummary($data->getSummary());
+                $currentProject->setDescription($data->getDescription());
+                $currentProject->setUpdatedAt(new DateTimeImmutable());
+                $currentProject->setStudyLevel($data->getStudyLevel());
+                $currentProject->setNeedDescription($data->getNeedDescription());
+                $currentProject->setDuration($data->getDuration());
+                $currentProject->setStatus($data->getStatus());
+                $currentProject->setTimeNecessaryWeek($data->getTimeNecessaryWeek());
+                $currentProject->setImage($data->getImage());
 
-            foreach ($data->getTechnologies() as $technology)
-            {
-                $currentProject->addTechnology($technology);
-            };
+                foreach ($data->getTechnologies() as $technology) {
+                    $currentProject->addTechnology($technology);
+                };
 
-            $em->flush($currentProject);
+                $em->flush($currentProject);
 
-            $this->addFlash('success', 'Votre projet a bien été modifié !');
-            return $this->redirectToRoute('app_current_user_projects');
-            
+                $this->addFlash('success', 'Votre projet a bien été modifié !');
+                return $this->redirectToRoute('app_current_user_projects');
+            }
         }
 
         return $this->render('project/edit.html.twig', [

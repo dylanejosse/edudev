@@ -11,7 +11,7 @@
 
 <section class="singleProject">
 
-    <div class="container p-4 px-md-0">
+    <div class="container px-4 pt-4 px-md-0">
 
         <div class="row">
 
@@ -30,13 +30,21 @@
                 <div class="col-12 col-md-8 m-0">
 
                     <div class="d-flex col-12 mb-3">
-                        <div class="col-12 col-md-9">
+                        <div class="col-12 col-md-7">
                             <h1 class="text-center text-md-start px-3 m-0">{{ currentProject.name }}</h1>
                         </div>
-                        <div class="d-md-flex d-none align-items-center justify-content-end col-3">
+                        {% if currentUser == currentProject.user %}
+                        <div class="d-md-flex d-none align-items-center justify-content-between col-5">
+                            <a class="btn btn-primary" href="{{ path('app_current_user_projects')}}">Voir mes projets</a>
+                            <a class="btn btn-warning" href="{{ path('app_project_edit', {id: currentProject.id}) }}">Modifier</a>
+                            <a class="btn btn-danger" href="{{ path('app_project_delete', {id: currentProject.id}) }}">Supprimer</a>
+                        </div>
+                        {% else %}
+                        <div class="d-md-flex d-none align-items-center justify-content-end col-5">
                             <a class="btn btn-warning me-3" href="{{ path('app_project_list') }}">Retour</a>
                             <a class="btn btn-success" href="">Candidater</a>
                         </div>
+                        {% endif %}
                     </div>
 
                     <div class="rounded p-3">
@@ -108,13 +116,19 @@
 
             <div class="d-md-none d-flex p-0">
             
-                <div class="d-flex justify-content-center col-12 p-3">
+                <div class="d-flex justify-content-center col-12 pt-3">
 
-                    <div class="d-flex align-items-center justify-content-center col-6">
-                    
-                        <a class="btn btn-success" href="">Candidater</a>
-                    
-                    </div>
+                        {% if currentUser == currentProject.user %}
+                        <div class="d-flex flex-wrap align-items-center justify-content-center col-12">
+                            <a class="col-7 btn btn-primary my-3" href="{{ path('app_current_user_projects')}}">Voir mes projets</a>
+                            <a class="col-7 btn btn-warning my-3" href="{{ path('app_project_edit', {id: currentProject.id}) }}">Modifier</a>
+                            <a class="col-7 btn btn-danger my-3" href="{{ path('app_project_delete', {id: currentProject.id}) }}">Supprimer</a>
+                        </div>
+                        {% else %}
+                        <div class="d-flex align-items-center justify-content-center col-7">
+                            <a class="btn btn-success" href="">Candidater</a>
+                        </div>
+                        {% endif %}
                 
                 </div>
 
