@@ -310,6 +310,15 @@ h2
 
 /* My informations page */
 
+.informations-profile
+{
+    font-family: 'Questrial', 'sans-serif';
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .missing-information
 {
     color: rgb(249, 160, 160);

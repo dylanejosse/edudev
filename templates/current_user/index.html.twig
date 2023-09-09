@@ -19,18 +19,18 @@
 
             {# General Informations section #}
 
-            <section class="d-flex flex-wrap col-12 col-md-4 p-3 mb-3 m-md-0">
+            <section class="d-flex flex-wrap col-12 col-md-4 p-3 m-0">
                 
-                <h2 class="text-center col-12">Informations générales</h2>
+                <h2 class="informations-profile text-center col-12">Informations générales</h2>
 
                 <div class="text-center mt-3 col-12">
-                    <p class="fw-bold fst-italic">Mon adresse mail</p>
+                    <p class="fw-bold">Mon adresse mail</p>
                     <p>{{ currentUser.email }}</p>
                 </div>
 
                 <div class="text-center my-3 col-12">
 
-                    <p class="fw-bold fst-italic">Mon Pseudo</p>
+                    <p class="fw-bold">Mon Pseudo</p>
                     {% if currentUser.username == false %}
                     <p class="missing-information">Vous n'avez pas communiqué de pseudo</p>
                     {% else %}
@@ -39,26 +39,26 @@
                         
                 </div>
 
-                <div class="col-12 d-flex justify-content-center mb-3">
-                    <a class="col-6 btn btn-danger" href="{{ path("app_current_user_delete")}}">Supprimer mon compte</a>
+                <div class="col-12 d-none d-md-flex justify-content-center mb-3">
+                    <a class="col-6 btn btn-danger" href="{{ path("app_current_user_delete")}}">Supprimer le compte</a>
                 </div>
 
-                <div class="col-12 d-flex justify-content-center">
-                    <a class="col-6 btn btn-warning" href="{{ path("app_current_user_edit")}}">Modifier mes informations</a>
+                <div class="col-12 d-none d-md-flex d-flex justify-content-center">
+                    <a class="col-6 btn btn-warning" href="{{ path("app_current_user_edit")}}">Modifier mon compte</a>
                 </div>
                 
             </section>
 
             {# Disponibility and Skills #}
 
-            <section class="col-12 col-md-8">
+            <section class="col-12 col-md-8 mb-3 m-md-0">
 
-                    <h2 class="col-12 m-0 text-center p-3">Disponibilités et compétences</h2>
+                    <h2 class="informations-profile col-12 m-0 text-center p-3">Disponibilités et compétences</h2>
 
                     <div class="col-12 d-flex flex-wrap align-items-start justify-content-md-between">
 
                     <div class="text-center my-3 col-12 col-md-5 border rounded p-3">
-                        <p class="fw-bold fst-italic">Mon Niveau d'études</p>
+                        <p class="fw-bold">Mon Niveau d'études</p>
 
                         {% if currentUser.studyLevel == false %}
                         <p class="missing-information m-0">Vous n'avez pas communiqué votre niveau d'études</p>
@@ -68,7 +68,7 @@
                         </div>
 
                     <div class="text-center my-3 col-12 col-md-5 border rounded p-3">
-                        <p class="fw-bold fst-italic">Mon temps disponible par semaine</p>
+                        <p class="fw-bold">Ma disponibilité (semaine)</p>
 
                         {% if currentUser.timeAvailableWeek == false %}
                         <p class="missing-information m-0">Vous n'avez pas communiqué vos disponibilté hebdomadaire</p>
@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="text-center my-3 col-12 col-md-5 border rounded p-3">
-                        <p class="fw-bold fst-italic">Les technologies qui m'intéressent</p>
+                        <p class="fw-bold">Les technologies qui m'intéressent</p>
 
                         {# Verification if a technologie is specified by the user #}
                         {% if currentUser.technologies|length > 0 %}
@@ -94,6 +94,14 @@
                     </div>
 
             </section>
+
+            <div class="col-12 d-flex d-md-none justify-content-center mb-3">
+                <a class="col-6 btn btn-danger" href="{{ path("app_current_user_delete")}}">Supprimer mon compte</a>
+            </div>
+
+            <div class="col-12 d-flex d-md-none d-flex justify-content-center">
+                <a class="col-6 btn btn-warning" href="{{ path("app_current_user_edit")}}">Modifier mes informations</a>
+            </div>
                 
         </div>
 
