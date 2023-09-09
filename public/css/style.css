@@ -307,3 +307,10 @@ h2
         height: 55vh;
     }
 }
+
+/* My informations page */
+
+.missing-information
+{
+    color: rgb(249, 160, 160);
+}
