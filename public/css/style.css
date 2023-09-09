@@ -322,3 +322,10 @@ h2
 {
     color: rgb(249, 160, 160);
 }
+
+/* My projects page */
+
+.my-projects-list
+{
+    min-height: 90vh;
+}
