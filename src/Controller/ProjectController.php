@@ -48,7 +48,21 @@ class ProjectController extends AbstractController
             "currentProject" => $currentProject,
             "projectOwner" => $projectOwner,
         ]);
-    }    
+    }
+    
+    /**
+     * @Route("/project/{id}/delete", name="app_project_delete")
+     */
+    public function delete(int $id, ProjectRepository $projectRepository, EntityManagerInterface $em): Response
+    {
+        $currentProject = $projectRepository->find($id);
+
+        $em->remove($currentProject);
+        $em->flush();
+
+        $this->addFlash('success', 'Votre projet a bien été supprimé !');
+        return $this->redirectToRoute('app_current_user_projects');
+    }
 
     /**
      * @Route("/add/project", name="app_add_project")
