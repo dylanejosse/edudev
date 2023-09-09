@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Project;
 use App\Form\AddProjectType;
+use App\Form\EditProjectType;
 use App\Repository\ProjectRepository;
 use App\Repository\UserRepository;
 use DateTime;
@@ -62,6 +63,50 @@ class ProjectController extends AbstractController
 
         $this->addFlash('success', 'Votre projet a bien été supprimé !');
         return $this->redirectToRoute('app_current_user_projects');
+    }
+
+    /**
+     * @Route("/project/{id}/edit", name="app_project_edit")
+     */
+    public function edit(int $id, ProjectRepository $projectRepository, Request $request, EntityManagerInterface $em): Response
+    {
+        $currentProject = $projectRepository->find($id);
+
+        $form = $this->createForm(EditProjectType::class, $currentProject);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $data = $form->getData();
+
+            $currentProject->setName($data->getName());
+            $currentProject->setSummary($data->getSummary());
+            $currentProject->setDescription($data->getDescription());
+            $currentProject->setUpdatedAt(new DateTimeImmutable());
+            $currentProject->setStudyLevel($data->getStudyLevel());
+            $currentProject->setNeedDescription($data->getNeedDescription());
+            $currentProject->setDuration($data->getDuration());
+            $currentProject->setStatus($data->getStatus());
+            $currentProject->setTimeNecessaryWeek($data->getTimeNecessaryWeek());
+            $currentProject->setImage($data->getImage());
+
+            foreach ($data->getTechnologies() as $technology)
+            {
+                $currentProject->addTechnology($technology);
+            };
+
+            $em->flush($currentProject);
+
+            $this->addFlash('success', 'Votre projet a bien été modifié !');
+            return $this->redirectToRoute('app_current_user_projects');
+            
+        }
+
+        return $this->render('project/edit.html.twig', [
+            'form' => $form->createView(),
+        ]);
+        
     }
 
     /**
