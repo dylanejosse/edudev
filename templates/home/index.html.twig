@@ -72,7 +72,7 @@
                         <p>{{ latestProject.status }}</p>
                         <h5 class="fw-bold">Cursus scolaire</h5>
                         <p>{{ latestProject.getStudyLevel() }}</p>
-                        <a class="btn btn-success" href="TODO: Add the path of the current project">Découvrir</a>
+                        <a class="btn btn-success" href="{{ path('app_project_display', {id : latestProject.id }) }}">Découvrir</a>
                     </div>
 
                 </div>
