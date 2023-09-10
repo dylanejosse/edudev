@@ -159,10 +159,10 @@ addProjectForm.addEventListener("submit", function(e)
             behavior: "smooth",
           });
     } 
-    else if (inputDescription.value.trim().length <= 100) 
+    else if (inputDescription.value.trim().length >= 100) 
     {
         let error = document.createElement("p");
-        error.textContent = "Le champ 'Besoin du projet' doit contenir au moins 200 caractères.";
+        error.textContent = "Le champ 'Besoin du projet' doit contenir au moins 100 caractères.";
         errors.appendChild(error);
         e.preventDefault();
         window.scrollTo({
@@ -236,3 +236,28 @@ function projectDescriptionCount (e)
 }
 
 inputProjectDescription.addEventListener('keyup', projectDescriptionCount);
+
+// Project Need Counter
+
+let inputProjectNeed = document.querySelector("#project-need-input");
+let projectNeedCounter = document.querySelector("#project-need-counter");
+projectNeedCounter.classList.add("input-incorrect");
+
+function projectNeedCount (e)
+{
+
+    projectNeedCounter.classList.remove("input-correct");
+    projectNeedCounter.classList.remove("input-incorrect")
+
+    projectNeedCounter.innerHTML = e.target.value.length;
+
+    if (projectNeedCounter.innerHTML >= 100 && projectNeedCounter.innerHTML > 0 )
+    {
+        projectNeedCounter.classList.add("input-correct")
+    } else
+    {
+        projectNeedCounter.classList.add("input-incorrect")
+    }
+}
+
+inputProjectNeed.addEventListener('keyup', projectNeedCount);

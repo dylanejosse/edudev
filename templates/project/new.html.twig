@@ -67,8 +67,12 @@
                     {{ form_row(form.study_level) }}
                     </div>
 
-                    <div class>
+                    <div id="project-need-input">
                     {{ form_row(form.need_description) }}
+                    </div>
+                    <div class=" d-flex col-12">
+                        <p class="m-0 col-6 fst-italic text-secondary">100 caractères <span class="text-decoration-underline">min</span></p>
+                        <p class="m-0 col-6 text-end"><span id="project-need-counter">0</span> / 100 caractères</p>
                     </div>
 
                     <div>
