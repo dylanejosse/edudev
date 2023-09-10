@@ -208,6 +208,24 @@ h2
 {
     font-weight: bold;
     margin: 0.5rem 0;
+    padding: 0;
+}
+
+#add-project-form label:after
+{
+    content: " *";
+    color: red;
+}
+
+#add-project-form fieldset label:after
+{
+    content: "";
+}
+
+#add-project-form fieldset legend:after
+{
+    content: " *";
+    color: red;
 }
 
 @media screen and (max-width: 768px) 
@@ -236,6 +254,16 @@ h2
 .errors p
 {
     padding: 0.25rem;
+}
+
+.input-correct
+{
+    color: green;
+}
+
+.input-incorrect
+{
+    color: red;
 }
 
 /* Single Project Display Page */

@@ -159,10 +159,10 @@ addProjectForm.addEventListener("submit", function(e)
             behavior: "smooth",
           });
     } 
-    else if (inputDescription.value.trim().length <= 100) 
+    else if (inputDescription.value.trim().length >= 100) 
     {
         let error = document.createElement("p");
-        error.textContent = "Le champ 'Besoin du projet' doit contenir au moins 200 caractères.";
+        error.textContent = "Le champ 'Besoin du projet' doit contenir au moins 100 caractères.";
         errors.appendChild(error);
         e.preventDefault();
         window.scrollTo({
@@ -186,3 +186,78 @@ addProjectForm.addEventListener("submit", function(e)
     }
 }
 )
+
+// Project Summary counter
+
+let inputProjectSummary = document.querySelector("#project-summary-input");
+let projectSummaryCounter = document.querySelector("#project-summary-counter");
+projectSummaryCounter.classList.add("input-incorrect");
+
+function projectSummaryCount (e)
+{
+
+    projectSummaryCounter.classList.remove("input-correct");
+    projectSummaryCounter.classList.remove("input-incorrect")
+
+    projectSummaryCounter.innerHTML = e.target.value.length;
+
+    if (projectSummaryCounter.innerHTML <= 100 && projectSummaryCounter.innerHTML > 0 )
+    {
+        projectSummaryCounter.classList.add("input-correct")
+    } else
+    {
+        projectSummaryCounter.classList.add("input-incorrect")
+    }
+}
+
+inputProjectSummary.addEventListener('keyup', projectSummaryCount);
+
+// Project Description Counter
+
+let inputProjectDescription = document.querySelector("#project-description-input");
+let projectDescriptionCounter = document.querySelector("#project-description-counter");
+projectDescriptionCounter.classList.add("input-incorrect");
+
+function projectDescriptionCount (e)
+{
+
+    projectDescriptionCounter.classList.remove("input-correct");
+    projectDescriptionCounter.classList.remove("input-incorrect")
+
+    projectDescriptionCounter.innerHTML = e.target.value.length;
+
+    if (projectDescriptionCounter.innerHTML >= 200 && projectDescriptionCounter.innerHTML > 0 )
+    {
+        projectDescriptionCounter.classList.add("input-correct")
+    } else
+    {
+        projectDescriptionCounter.classList.add("input-incorrect")
+    }
+}
+
+inputProjectDescription.addEventListener('keyup', projectDescriptionCount);
+
+// Project Need Counter
+
+let inputProjectNeed = document.querySelector("#project-need-input");
+let projectNeedCounter = document.querySelector("#project-need-counter");
+projectNeedCounter.classList.add("input-incorrect");
+
+function projectNeedCount (e)
+{
+
+    projectNeedCounter.classList.remove("input-correct");
+    projectNeedCounter.classList.remove("input-incorrect")
+
+    projectNeedCounter.innerHTML = e.target.value.length;
+
+    if (projectNeedCounter.innerHTML >= 100 && projectNeedCounter.innerHTML > 0 )
+    {
+        projectNeedCounter.classList.add("input-correct")
+    } else
+    {
+        projectNeedCounter.classList.add("input-incorrect")
+    }
+}
+
+inputProjectNeed.addEventListener('keyup', projectNeedCount);
