@@ -15,6 +15,11 @@ body::-webkit-scrollbar-thumb
     background-color: #cfd4ff;
 }
 
+body
+{
+    min-height: 100vh;
+}
+
 h1
 { 
     font-family: 'Questrial', 'sans-serif';
@@ -314,9 +319,9 @@ h2
 
 /* My profil Page */
 
-.section-profile
+#my_profile
 {
-    height: 80vh;
+    min-height: 90vh;
 }
 
 .my-projects
