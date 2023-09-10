@@ -20,31 +20,26 @@ class AddProjectType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', TextType::class, [
+            ->add('name', TextareaType::class, [
                 'label' => 'Nom du projet',
                 'label_attr' => ['class' => 'fw-bold my-2',
                 "id" => 'name_project'],
-                'help' => "Inventivité et originalité sont ici demandées !",
-                'help_attr' => ['class' => 'fst-italic'],
                 'required' => true,
+                'attr' => ['rows' => '1', 'placeholder' => 'Soyez original !']
                 ])
 
             ->add('summary', TextareaType::class, [
                 'label' => 'Résumé',
                 'label_attr' => ['class' => 'fw-bold my-2'],
                 'required' => true,
-                'help' => "Soyez impactants et directs.",
-                'help_attr' => ['class' => 'fst-italic'],
-                'attr' => ['rows' => '3']
+                'attr' => ['rows' => '4', 'placeholder' => 'Soyez impactants et directs.']
                 ])
 
             ->add('description', TextareaType::class, [
                 'label' => 'Description',
                 'label_attr' => ['class' => 'fw-bold my-2'],
                 'required' => true,
-                'help' => "Plus vous détaillez, plus vous augmenterez l'attractivité de votre projet.",
-                'help_attr' => ['class' => 'fst-italic'],
-                'attr' => ['rows' => '5']
+                'attr' => ['rows' => '8', 'placeholder' => "Plus vous détaillez, plus vous augmenterez l'attractivité de votre projet."]
                 ])
 
             ->add('technologies', EntityType::class, [
@@ -148,10 +143,8 @@ class AddProjectType extends AbstractType
             ->add('need_description', TextareaType::class, [
                 'label' => 'Besoin du projet',
                 'label_attr' => ['class' => 'fw-bold my-2'],
-                'help' => "Détaillez ce que vous recherchez pour faire avancer pour votre projet.",
-                'help_attr' => ['class' => 'fst-italic'],
                 'required' => true,
-                'attr' => ['rows' => '5']
+                'attr' => ['rows' => '5', 'placeholder' => "Détaillez ce que vous recherchez pour faire avancer pour votre projet."]
                 ])
 
             ->add('time_necessary_week', ChoiceType::class, [

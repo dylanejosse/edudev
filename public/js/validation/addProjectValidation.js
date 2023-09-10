@@ -186,3 +186,53 @@ addProjectForm.addEventListener("submit", function(e)
     }
 }
 )
+
+// Project Summary counter
+
+let inputProjectSummary = document.querySelector("#project-summary-input");
+let projectSummaryCounter = document.querySelector("#project-summary-counter");
+projectSummaryCounter.classList.add("input-incorrect");
+
+function projectSummaryCount (e)
+{
+
+    projectSummaryCounter.classList.remove("input-correct");
+    projectSummaryCounter.classList.remove("input-incorrect")
+
+    projectSummaryCounter.innerHTML = e.target.value.length;
+
+    if (projectSummaryCounter.innerHTML <= 100 && projectSummaryCounter.innerHTML > 0 )
+    {
+        projectSummaryCounter.classList.add("input-correct")
+    } else
+    {
+        projectSummaryCounter.classList.add("input-incorrect")
+    }
+}
+
+inputProjectSummary.addEventListener('keyup', projectSummaryCount);
+
+// Project Description Counter
+
+let inputProjectDescription = document.querySelector("#project-description-input");
+let projectDescriptionCounter = document.querySelector("#project-description-counter");
+projectDescriptionCounter.classList.add("input-incorrect");
+
+function projectDescriptionCount (e)
+{
+
+    projectDescriptionCounter.classList.remove("input-correct");
+    projectDescriptionCounter.classList.remove("input-incorrect")
+
+    projectDescriptionCounter.innerHTML = e.target.value.length;
+
+    if (projectDescriptionCounter.innerHTML >= 200 && projectDescriptionCounter.innerHTML > 0 )
+    {
+        projectDescriptionCounter.classList.add("input-correct")
+    } else
+    {
+        projectDescriptionCounter.classList.add("input-incorrect")
+    }
+}
+
+inputProjectDescription.addEventListener('keyup', projectDescriptionCount);

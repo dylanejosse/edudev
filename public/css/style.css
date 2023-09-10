@@ -238,6 +238,16 @@ h2
     padding: 0.25rem;
 }
 
+.input-correct
+{
+    color: green;
+}
+
+.input-incorrect
+{
+    color: red;
+}
+
 /* Single Project Display Page */
 
 @media screen and (max-width: 768px) 
