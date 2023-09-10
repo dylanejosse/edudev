@@ -283,6 +283,11 @@ h2
 
 /* Single Project Display Page */
 
+.single-project
+{
+    min-height: 90vh;
+}
+
 @media screen and (max-width: 768px) 
 {
     .single-project-image
