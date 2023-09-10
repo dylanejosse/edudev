@@ -233,6 +233,16 @@ h2
     color: red;
 }
 
+@media screen and (min-width: 1200px) 
+{
+    #project-right-section
+    {
+        border-left: 2px #cecece solid;
+        border-top: 2px #cecece solid;
+        background-color: #f6f6f6;
+    }
+}
+
 @media screen and (max-width: 768px) 
 {
     #add_project_technologies .form-check 
