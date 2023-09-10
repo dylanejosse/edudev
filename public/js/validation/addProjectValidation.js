@@ -25,6 +25,12 @@ addProjectForm.addEventListener("submit", function(e)
         error.textContent = "Le champ 'Nom du projet' ne peut pas être vide";
         errors.appendChild(error);
         e.preventDefault();
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: "smooth",
+          });
+          
     } 
     else if (regexName.test(inputName.value.trim()) === false)
     {
@@ -32,6 +38,11 @@ addProjectForm.addEventListener("submit", function(e)
         error.textContent = "Pour le nom du projet, seuls les caractères suivants sont autorisés : [a-z] [A-Z] [0-9]";
         errors.appendChild(error);
         e.preventDefault();
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: "smooth",
+          });
     }
 
     if (inputSummary.value.trim() === "")
@@ -40,6 +51,11 @@ addProjectForm.addEventListener("submit", function(e)
         error.textContent = "Le champ 'Résumé du projet' ne peut pas être vide";
         errors.appendChild(error);
         e.preventDefault();
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: "smooth",
+          });
     } 
     else if (inputSummary.value.trim().length >= 100)
     {
@@ -47,6 +63,11 @@ addProjectForm.addEventListener("submit", function(e)
         error.textContent = "Le champ 'Résumé du projet' doit contenir au maximum 100 caractères";
         errors.appendChild(error);
         e.preventDefault();
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: "smooth",
+          });
     }
 
     if (inputDescription.value.trim() === "")
@@ -55,6 +76,11 @@ addProjectForm.addEventListener("submit", function(e)
         error.textContent = "Le champ 'Description du projet' ne peut pas être vide";
         errors.appendChild(error);
         e.preventDefault();
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: "smooth",
+          });
     } 
     else if (inputDescription.value.trim().length <= 200) 
     {
@@ -62,14 +88,24 @@ addProjectForm.addEventListener("submit", function(e)
         error.textContent = "Le champ 'Description du projet' doit contenir au moins 200 caractères.";
         errors.appendChild(error);
         e.preventDefault();
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: "smooth",
+          });
     }
 
-    if (inputTimeWeek.value === "")
+    if (inputTechnologies.value === "")
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Technologies utilisées sur ce projet' ne peut pas être vide";
         errors.appendChild(error);
         e.preventDefault();
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: "smooth",
+          });
     }
 
     if (inputProjectImage.value === "")
@@ -78,6 +114,11 @@ addProjectForm.addEventListener("submit", function(e)
         error.textContent = "Le champ 'Image de la technologie principale' ne peut pas être vide";
         errors.appendChild(error);
         e.preventDefault();
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: "smooth",
+          });
     }
 
     if (inputDuration.value === "")
@@ -86,6 +127,11 @@ addProjectForm.addEventListener("submit", function(e)
         error.textContent = "Le champ 'Durée estimée du projet' ne peut pas être vide";
         errors.appendChild(error);
         e.preventDefault();
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: "smooth",
+          });
     }
 
     if (inputStudyLevel.value === "")
@@ -94,6 +140,11 @@ addProjectForm.addEventListener("submit", function(e)
         error.textContent = "Le champ 'Niveau d'études souhaité des participants' ne peut pas être vide";
         errors.appendChild(error);
         e.preventDefault();
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: "smooth",
+          });
     }
 
     if (inputNeed.value.trim() === "")
@@ -102,6 +153,11 @@ addProjectForm.addEventListener("submit", function(e)
         error.textContent = "Le champ 'Besoin du projet' ne peut pas être vide";
         errors.appendChild(error);
         e.preventDefault();
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: "smooth",
+          });
     } 
     else if (inputDescription.value.trim().length <= 100) 
     {
@@ -109,6 +165,11 @@ addProjectForm.addEventListener("submit", function(e)
         error.textContent = "Le champ 'Besoin du projet' doit contenir au moins 200 caractères.";
         errors.appendChild(error);
         e.preventDefault();
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: "smooth",
+          });
     }
 
     if (inputTimeWeek.value === "")
@@ -117,6 +178,11 @@ addProjectForm.addEventListener("submit", function(e)
         error.textContent = "Le champ 'Estimation du temps à consacrer au projet par semaine (par participant)' ne peut pas être vide";
         errors.appendChild(error);
         e.preventDefault();
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: "smooth",
+          });
     }
 }
 )
