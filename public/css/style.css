@@ -258,6 +258,32 @@ h2
     }
 }
 
+.candidate
+{
+    height: 30%;
+}
+
+@media screen and (min-width: 1200px)
+{
+    .edit-delete-project
+    {
+    height: 30%;
+    }
+}
+
+@media screen and (min-width: 1400px)
+{
+    .edit-delete-project
+    {
+    height: 35%;
+    }
+}
+
+.general-infos
+{
+    max-height: 320px;
+}
+
 /* My profil Page */
 
 .section-profile

@@ -11,30 +11,30 @@
 
 <section class="singleProject">
 
-    <div class="container px-4 pt-4 px-lg-0">
+    <div class="container px-4 pt-4 px-xl-0">
 
         <div class="row">
 
-            <div class="d-flex flex-wrap col-12 p-0 mb-3 mb-lg-5">
+            <div class="d-flex flex-wrap col-12 p-0 mb-3 mb-xl-5">
             
-                <div class="d-flex justify-content-center align-items-center col-12 col-lg-4 mb-3 m-lg-0">
+                <div class="d-flex justify-content-center align-items-center col-12 col-xl-4 mb-3 m-xl-0">
 
                     <div>
                 
-                        <img class="single-project-image col-6 col-lg-10" src="../{{ currentProject.image }}" alt="">
+                        <img class="single-project-image col-6 col-xl-10" src="../{{ currentProject.image }}" alt="">
 
                     </div>
                 
                 </div>
 
-                <div class="col-12 col-lg-8 m-0">
+                <div class="col-12 col-xl-8 m-0">
 
-                    <div class="d-flex col-12 mb-3">
-                        <div class="col-12 col-lg-7">
-                            <h1 class="text-center text-lg-start px-3 m-0">{{ currentProject.name }}</h1>
+                    <div class="d-flex flex-wrap col-12 mb-3">
+                        <div class="col-12 col-xl-7">
+                            <h1 class="text-center text-xl-start px-3 m-0">{{ currentProject.name }}</h1>
                         </div>
 
-                        <div class="d-flex align-items-center justify-content-end col-12 col-lg-5">
+                        <div class="d-flex align-items-center justify-content-center justify-content-xl-end col-12 col-xl-5">
                             <div>
                                 <a class="btn btn-primary" href="{{ path('app_project_list') }}">Trouver un autre projet</a>
                             </div>
@@ -60,9 +60,9 @@
 
             <div class="d-flex flex-wrap mb-3 p-0">
 
-                <div class="col-12 col-lg-4 d-flex justify-content-center mb-3 m-lg-0">
+                <div class="general-infos col-12 col-xl-4 d-flex justify-content-center mb-3 m-xl-0">
 
-                    <div class="h-auto col-12 col-lg-9 rounded border p-3">
+                    <div class="h-auto col-12 col-xl-9 rounded border p-3">
                     
                         <h3 class="fst-italic mb-3">Informations générales</h3>
 
@@ -73,12 +73,12 @@
                         <p><span class="fst-italic text-decoration-underline">Localisation </span>: France (remote)</p>
 
                         {% if currentUser == currentProject.user %}
-                        <div class="d-lg-flex flex-wrap d-none align-items-center col-12">
-                            <a class="btn btn-warning col-8 mb-3" href="{{ path('app_project_edit', {id: currentProject.id}) }}">Modifier</a>
-                            <a class="btn btn-danger col-8" href="{{ path('app_project_delete', {id: currentProject.id}) }}">Supprimer</a>
+                        <div class="edit-delete-project d-xl-flex flex-wrap d-none align-items-center col-12">
+                            <a class="btn btn-warning col-8 col-xxl-7" href="{{ path('app_project_edit', {id: currentProject.id}) }}">Modifier</a>
+                            <a class="btn btn-danger col-8 col-xxl-7" href="{{ path('app_project_delete', {id: currentProject.id}) }}">Supprimer</a>
                         </div>
                         {% else %}
-                        <div class="d-lg-flex d-none align-items-center col-12">
+                        <div class="candidate d-xl-flex d-none align-items-center col-12">
                             <a class="btn btn-success col-7" href="">Candidater</a>
                         </div>
                         {% endif %}
@@ -87,7 +87,7 @@
 
                 </div>
 
-                <div class="col-12 col-lg-8 rounded border p-3">
+                <div class="col-12 col-xl-8 rounded border p-3">
                 
                     <h3 class="fst-italic mb-3">Gros plan sur le projet</h3>
 
@@ -99,9 +99,9 @@
 
             </div>
 
-            <div class="d-flex justify-content-center justify-content-lg-end p-0">
+            <div class="d-flex justify-content-center justify-content-xl-end p-0">
             
-                <div class="col-12 col-lg-8 rounded border p-3">
+                <div class="col-12 col-xl-8 rounded border p-3">
                 
                     <div class="">
                     
@@ -124,15 +124,15 @@
             
             </div>
 
-            <div class="d-lg-none d-flex p-0">
+            <div class="d-xl-none d-flex p-0">
             
                 <div class="d-flex justify-content-center col-12 pt-3">
 
                         {% if currentUser == currentProject.user %}
                         <div class="d-flex flex-wrap align-items-center justify-content-center col-12">
-                            <a class="col-7 btn btn-primary my-3" href="{{ path('app_current_user_projects')}}">Voir mes projets</a>
-                            <a class="col-7 btn btn-warning my-3" href="{{ path('app_project_edit', {id: currentProject.id}) }}">Modifier</a>
-                            <a class="col-7 btn btn-danger my-3" href="{{ path('app_project_delete', {id: currentProject.id}) }}">Supprimer</a>
+                            <a class="col-7 btn btn-primary my-1" href="{{ path('app_current_user_projects')}}">Voir mes projets</a>
+                            <a class="col-7 btn btn-warning my-1" href="{{ path('app_project_edit', {id: currentProject.id}) }}">Modifier</a>
+                            <a class="col-7 btn btn-danger my-1" href="{{ path('app_project_delete', {id: currentProject.id}) }}">Supprimer</a>
                         </div>
                         {% else %}
                         <div class="d-flex align-items-center justify-content-center col-7">
