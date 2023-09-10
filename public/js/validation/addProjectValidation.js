@@ -159,7 +159,7 @@ addProjectForm.addEventListener("submit", function(e)
             behavior: "smooth",
           });
     } 
-    else if (inputDescription.value.trim().length >= 100) 
+    else if (inputDescription.value.trim().length <= 100) 
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Besoin du projet' doit contenir au moins 100 caractères.";
