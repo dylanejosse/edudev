@@ -36,7 +36,7 @@
 
                         <div class="d-flex align-items-center justify-content-center justify-content-xl-end col-12 col-xl-5">
                             <div>
-                                <a class="btn btn-primary" href="{{ path('app_project_list') }}">Trouver un autre projet</a>
+                                <a class="btn btn-primary" href="{{ path('app_project_list') }}">Voir les autres projets</a>
                             </div>
                             {% if currentUser == currentProject.user %}
                             <div>
@@ -74,8 +74,8 @@
 
                         {% if currentUser == currentProject.user %}
                         <div class="edit-delete-project d-xl-flex flex-wrap d-none align-items-center col-12">
-                            <a class="btn btn-warning col-8 col-xxl-7" href="{{ path('app_project_edit', {id: currentProject.id}) }}">Modifier</a>
-                            <a class="btn btn-danger col-8 col-xxl-7" href="{{ path('app_project_delete', {id: currentProject.id}) }}">Supprimer</a>
+                            <a class="btn btn-warning col-8 col-xxl-7 my-1" href="{{ path('app_project_edit', {id: currentProject.id}) }}">Modifier</a>
+                            <a class="btn btn-danger col-8 col-xxl-7 my-1" href="{{ path('app_project_delete', {id: currentProject.id}) }}">Supprimer</a>
                         </div>
                         {% else %}
                         <div class="candidate d-xl-flex d-none align-items-center col-12">
@@ -130,9 +130,8 @@
 
                         {% if currentUser == currentProject.user %}
                         <div class="d-flex flex-wrap align-items-center justify-content-center col-12">
-                            <a class="col-7 btn btn-primary my-1" href="{{ path('app_current_user_projects')}}">Voir mes projets</a>
-                            <a class="col-7 btn btn-warning my-1" href="{{ path('app_project_edit', {id: currentProject.id}) }}">Modifier</a>
-                            <a class="col-7 btn btn-danger my-1" href="{{ path('app_project_delete', {id: currentProject.id}) }}">Supprimer</a>
+                            <a class="col-7 btn btn-warning my-2" href="{{ path('app_project_edit', {id: currentProject.id}) }}">Modifier</a>
+                            <a class="col-7 btn btn-danger my-2" href="{{ path('app_project_delete', {id: currentProject.id}) }}">Supprimer</a>
                         </div>
                         {% else %}
                         <div class="d-flex align-items-center justify-content-center col-7">

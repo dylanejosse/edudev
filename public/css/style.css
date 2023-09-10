@@ -267,7 +267,7 @@ h2
 {
     .edit-delete-project
     {
-    height: 30%;
+    height: 25%;
     }
 }
 
@@ -275,13 +275,13 @@ h2
 {
     .edit-delete-project
     {
-    height: 35%;
+    height: 30%;
     }
 }
 
 .general-infos
 {
-    max-height: 320px;
+    max-height: 350px;
 }
 
 /* My profil Page */
