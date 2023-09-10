@@ -211,6 +211,23 @@ h2
     padding: 0;
 }
 
+#add-project-form label:after
+{
+    content: " *";
+    color: red;
+}
+
+#add-project-form fieldset label:after
+{
+    content: "";
+}
+
+#add-project-form fieldset legend:after
+{
+    content: " *";
+    color: red;
+}
+
 @media screen and (max-width: 768px) 
 {
     #add_project_technologies .form-check 

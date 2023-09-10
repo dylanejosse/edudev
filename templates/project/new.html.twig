@@ -14,12 +14,14 @@
         <div class="row">
             <h1 class="text-center my-5">Proposer un nouveau projet</h1>
 
+            <p class="text-center fst-italic">Les champs accompagnés du signe <span class="text-danger fw-bold">*</span> sont obligatoires (et oui, ils sont tous obligatoires).</p>
+
             <div class="my-3">
                 <div class="errors rounded">
                 </div>
                 {{ form_start(form, {attr:{'novalidate': 'novalidate', 'id': "add_project_form"}}) }}
 
-                <div class="d-flex flex-wrap">
+                <div class="d-flex flex-wrap" id="add-project-form">
 
                 <div class="col-12 col-xl-4 p-xl-3">
 
