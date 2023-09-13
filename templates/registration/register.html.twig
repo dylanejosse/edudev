@@ -41,20 +41,25 @@
 
                 {{ form_start(registrationForm, {attr: {"id": "registration_form", "novalidate":"novalidate"}}) }}
                     <div class="errors"></div>
+
                     <div class="my-3">
                         <a href="{{ path('app_home') }}">Retour</a>
                     </div>
+
                     <h1 class="h3 mb-3 fw-bold">Inscription</h1>
+
                     {{ form_row(registrationForm.email, {
                         label: 'Adresse mail'
                     }) }}
+
                     {{ form_row(registrationForm.plainPassword, {
                         label: 'Mot de passe',
                         help: "8 caractères min. Seuls les caractères spéciaux suivants sont disponibles: [.*/?-!%]"
                     }) }}
-                    {{ form_row(registrationForm.agreeTerms, {
-                        label: "J'accepte les conditions d'utilisation Edudev",
-                    }) }}
+
+                    <div>
+                    {{ form_row(registrationForm.agreeTerms) }}
+                    </div>
 
                     <button class="btn btn-success" type="submit" class="btn">M'inscrire</button>
                     <a href="{{ path("app_login") }}" class="btn btn-light mx-3">J'ai déjà un compte</a>
