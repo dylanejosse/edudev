@@ -11,7 +11,6 @@ validationForm.addEventListener("submit", function(e)
 
     // TODO: Compléter les regex pour les rendre plus précises
     let regexEmail = /^[\w\.]+@[\w]+\.[a-z]+$/;
-    let regexPassword = /^[\w\.\*\/\?\-\!\%]{8,}$/
 
     // Email validation
     if (inputEmail.value.trim() === "")
@@ -62,12 +61,18 @@ let validationSpecialCharacters = document.querySelector("#registration-password
 let validationNumber = document.querySelector("#registration-password-number");
 let validationUppercase = document.querySelector("#registration-password-uppercase");
 
+let regexPassword = /^[\w\.\*\/\?\-\!\%]{8,}$/
+//TODO: Ajouter les caractères spéciaux souhaités
+let specialCharacters = ["@", "?", "!"]
+
 function passwordValidation (e)
 {
+    let actualPassword = e.target.value
+
     validationLength.classList.remove("input-correct");
     validationLength.classList.remove("input-incorrect");
 
-    PasswordLength = e.target.value.length;
+    PasswordLength = actualPassword.length;
 
     if (PasswordLength >= 8)
     {
@@ -76,6 +81,20 @@ function passwordValidation (e)
     {
         validationLength.classList.add("input-incorrect")
     }
+
+    // Validation Special Characters
+    for (letter of Array.from(actualPassword))
+    {
+        if (specialCharacters.includes(letter))
+        {
+            validationSpecialCharacters.classList.add("input-correct")
+        } 
+        else
+        {
+            validationSpecialCharacters.classList.add("input-incorrect")
+        }
+    }
+
 }
 
 currentPassword.addEventListener('keyup', passwordValidation);
