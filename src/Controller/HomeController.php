@@ -30,4 +30,12 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    /**
+     * @Route("/conditions-utilisation", name="app_home_use_policy")
+     */
+    public function usePolicy(): Response
+    {
+        return $this->render('home/usePolicy.html.twig');
+    }
 }

@@ -139,6 +139,13 @@ h2
     border-radius: 5%;
 }
 
+/* Use Policy */
+
+.use-policy
+{
+    min-height: 90vh;
+}
+
 /* Registration Page */
 
 .register
