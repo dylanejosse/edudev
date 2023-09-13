@@ -26,7 +26,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
                 'label_html' => true,
-                'label' => "J'accepte les <a href='/conditions-utilisation'>conditions d'utilisation</a> Edudev", 
+                'label' => "J'accepte les <a href='edudev/public/conditions-utilisation'>conditions d'utilisation</a> Edudev", 
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
@@ -35,7 +35,7 @@ class RegistrationFormType extends AbstractType
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Veuillez entrer un mot de passe',
                     ]),
                     new Length([
                         'min' => 8,
