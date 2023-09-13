@@ -53,3 +53,29 @@ validationForm.addEventListener("submit", function(e)
     }
 
 })
+
+// Validation password
+
+let currentPassword = document.querySelector("#registration_form_plainPassword");
+let validationLength = document.querySelector("#registration-password-length");
+let validationSpecialCharacters = document.querySelector("#registration-password-special-characters");
+let validationNumber = document.querySelector("#registration-password-number");
+let validationUppercase = document.querySelector("#registration-password-uppercase");
+
+function passwordValidation (e)
+{
+    validationLength.classList.remove("input-correct");
+    validationLength.classList.remove("input-incorrect");
+
+    PasswordLength = e.target.value.length;
+
+    if (PasswordLength >= 8)
+    {
+        validationLength.classList.add("input-correct")
+    } else
+    {
+        validationLength.classList.add("input-incorrect")
+    }
+}
+
+currentPassword.addEventListener('keyup', passwordValidation);
