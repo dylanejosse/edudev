@@ -54,8 +54,13 @@
 
                     {{ form_row(registrationForm.plainPassword, {
                         label: 'Mot de passe',
-                        help: "8 caractères min. Seuls les caractères spéciaux suivants sont disponibles: [.*/?-!%]"
                     }) }}
+                    <div class="col-12 my-3">
+                        <p class="m-0 col-12 text-secondary">8 caractères minimum</p>
+                        <p class="m-0 col-12 text-secondary">Un caractère spécial minimum : @/"'()-_=+!§:;.</p>
+                        <p class="m-0 col-12 text-secondary">Un chiffre minimum</p>
+                        <p class="m-0 col-12 text-secondary">Une majuscule minimum</p>
+                    </div>
 
                     <div>
                     {{ form_row(registrationForm.agreeTerms) }}
