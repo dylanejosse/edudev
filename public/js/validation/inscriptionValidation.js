@@ -58,21 +58,21 @@ validationForm.addEventListener("submit", function(e)
         errors.appendChild(error);
         e.preventDefault();
     }
-    else if ((/[A-Z]/g).test(inputPassword.value.trim()))
+    else if (!(/[A-Z]/g).test(inputPassword.value.trim()))
     {
         let error = document.createElement("p");
         error.textContent = "Attention, votre mot de passe doit contenir au moins une majuscule";
         errors.appendChild(error);
         e.preventDefault();
     }
-    else if ((/[a-z]/g).test(inputPassword.value.trim()))
+    else if (!(/[a-z]/g).test(inputPassword.value.trim()))
     {
         let error = document.createElement("p");
         error.textContent = "Attention, votre mot de passe doit contenir au moins une minuscule";
         errors.appendChild(error);
         e.preventDefault();
     }
-    else if ((/[0-9]/g).test(inputPassword.value.trim()))
+    else if (!(/[0-9]/g).test(inputPassword.value.trim()))
     {
         let error = document.createElement("p");
         error.textContent = "Attention, votre mot de passe doit contenir au moins un chiffre";
