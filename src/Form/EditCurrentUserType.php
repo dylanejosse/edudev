@@ -24,6 +24,7 @@ class EditCurrentUserType extends AbstractType
             ])
             ->add('study_level', ChoiceType::class, [
                 'label' => "Votre niveau d'études",
+                'placeholder' => "Choisissez une option",
                 'choices' => [
                     "Autodidacte" => "Autodidacte",
                     "Bac + 2" => "Bac + 2",
@@ -34,6 +35,7 @@ class EditCurrentUserType extends AbstractType
             
             ->add('time_available_week', ChoiceType::class, [
             'label' => 'Estimation du temps que vous souhaitez consacrer à des projets tech par semaine',
+            'placeholder' => "Choisissez une option",
             'choices' => [
                 "Moins de 5 heures" => "Moins de 5 heures",
                 "Entre 5 et 15 heures" => "Entre 5 et 15 heures",
