@@ -405,7 +405,7 @@ h2
 
 .height-section
 {
-    height: 90vh;
+    min-height: 90vh;
 }
 
 /* My informations page */

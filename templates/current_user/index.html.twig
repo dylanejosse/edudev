@@ -8,13 +8,13 @@
 {% endblock %}
 
 {% block body %}
-<section class="h-100">
+<section class="height-section">
 
     <div class="container d-flex flex-wrap">
 
         <div class="row">
 
-            <h1 class="text-center my-5">Mes Informations</h1>
+            <h1 class="text-center my-5">Mes Données</h1>
             <p class="text-center mb-5">Retrouvez sur cette page l'ensemble des informations que vous avez pu renseigner lors de votre inscription ou de votre utilisation d'Edudev. Bien évidemment, le mot de passe n'apparaît pas, pour des raisons évidentes de sécurité !</p>
 
             {# General Informations section #}
@@ -99,7 +99,7 @@
                 <a class="col-6 btn btn-danger" href="{{ path("app_current_user_delete")}}">Supprimer mon compte</a>
             </div>
 
-            <div class="col-12 d-flex d-md-none d-flex justify-content-center">
+            <div class="col-12 d-flex d-md-none d-flex justify-content-center mb-3 m-lg-0">
                 <a class="col-6 btn btn-warning" href="{{ path("app_current_user_edit")}}">Modifier mes informations</a>
             </div>
                 
