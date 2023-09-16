@@ -2,7 +2,7 @@ let validationForm = document.querySelector("#registration_form");
 
 //TODO: Vérifier si les regex sont complètes
 let regexEmail = /^[\w\.]+@[\w]+\.[a-z]+$/;
-let specialCharacters = /[@&"\(\)\*\[\]€£’'\+=/;?#²,:-_\^\$`\|\%<>§¨!\.]/;
+let specialCharacters = /[@&"\(\)\*\[\]€£’'\+=/;?#²,:-_\^\$`\|\%<>§¨\!\.]/;
 
 let currentPassword = document.querySelector("#registration_form_plainPassword");
 let validationLength = document.querySelector("#registration-password-length");
