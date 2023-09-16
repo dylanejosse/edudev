@@ -161,11 +161,26 @@ h2
     background-size: cover;
 }
 
-.register-block
+@media screen and (max-width: 768px) 
 {
-    height: 80vh;
-    border-radius: 5%;
+    .register-block
+    {
+        height: 95%;
+        border-radius: 5%;
+        background-color: white;
+    }
 }
+
+@media screen and (min-width: 768px) 
+{
+    .register-block
+    {
+        height: 90%;
+        border-radius: 5%;
+        background-color: #f8f9fa;
+    }
+}
+
 
 .register-block form
 {

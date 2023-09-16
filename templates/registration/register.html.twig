@@ -36,15 +36,16 @@
         <div class="d-flex register align-items-center col-12 col-xl-6 col-xxl-5">
 
 
-            <div class="d-flex flex-wrap align-items-center justify-content-center col-11 register-block container bg-light">
+            <div class="d-flex flex-wrap align-items-center justify-content-center col-11 register-block container">
 
 
                 {{ form_start(registrationForm, {attr: {"id": "registration_form", "novalidate":"novalidate"}}) }}
-                    <div class="errors"></div>
 
                     <div class="my-3">
-                        <a href="{{ path('app_home') }}">Retour</a>
+                        <a class="text-decoration-none" href="{{ path('app_home') }}">Accéder à l'acceuil Edudev</a>
                     </div>
+
+                    <div class="errors rounded"></div>
 
                     <h1 class="h3 mb-3 fw-bold">Inscription</h1>
 
@@ -52,17 +53,21 @@
                         label: 'Adresse mail'
                     }) }}
 
-                    {{ form_row(registrationForm.plainPassword, {
-                        label: 'Mot de passe',
-                        help: "8 caractères min. Seuls les caractères spéciaux suivants sont disponibles: [.*/?-!%]"
-                    }) }}
+                    {{ form_row(registrationForm.plainPassword) }}
+                    <ul class="col-12 my-3">
+                        <li class="m-0 col-12" id="registration-password-length">8 caractères minimum</li>
+                        <li class="m-0 col-12" id="registration-password-special-characters">1 caractère spécial minimum</li>
+                        <li class="m-0 col-12" id="registration-password-number">1 chiffre minimum</li>
+                        <li class="m-0 col-12" id="registration-password-uppercase">1 majuscule minimum</li>
+                        <li class="m-0 col-12" id="registration-password-lowercase">1 minuscule minimum</li>
+                    </ul>
 
                     <div>
                     {{ form_row(registrationForm.agreeTerms) }}
                     </div>
 
                     <button class="btn btn-success" type="submit" class="btn">M'inscrire</button>
-                    <a href="{{ path("app_login") }}" class="btn btn-light mx-3">J'ai déjà un compte</a>
+                    <a href="{{ path("app_login") }}" class="btn btn-secondary my-2 mx-md-3">J'ai déjà un compte</a>
                 {{ form_end(registrationForm) }}
 
             </div>
