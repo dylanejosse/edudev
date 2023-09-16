@@ -34,12 +34,8 @@
                 <form method="post" class="col-12 p-1 p-md-5">
 
                     <div class="my-3">
-                        <a href="{{ path('app_home') }}">Retour</a>
+                        <a href="{{ path('app_home') }}">Accéder à l'acceuil Edudev</a>
                     </div>
-
-                    {% if error %}
-                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                    {% endif %}
 
                     {% if app.user %}
                         <div class="mb-3">
@@ -48,6 +44,11 @@
                     {% endif %}
 
                     <h1 class="h3 mb-3 fw-bold">Connexion</h1>
+
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
                     <label for="inputEmail" class="mb-2">Adresse mail</label>
                     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-3" autocomplete="email" required autofocus>
                     <label for="inputPassword" class="mb-2">Mot de passe</label>
@@ -66,11 +67,11 @@
                         </div>
                     #}
 
-                    <button class="btn btn-success mb-3 me-3" type="submit">
+                    <button class="btn btn-success" type="submit">
                         Se connecter
                     </button>
 
-                    <a href="{{ path('app_register') }}" class="btn btn-light mb-3">Créer un compte</a>
+                    <a href="{{ path('app_register') }}" class="btn btn-secondary btn btn-secondary my-2 mx-md-3">Créer un compte</a>
 
                 </form>
 
