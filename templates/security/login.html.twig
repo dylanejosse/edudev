@@ -37,10 +37,6 @@
                         <a href="{{ path('app_home') }}">Retour</a>
                     </div>
 
-                    {% if error %}
-                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                    {% endif %}
-
                     {% if app.user %}
                         <div class="mb-3">
                             You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
@@ -48,6 +44,11 @@
                     {% endif %}
 
                     <h1 class="h3 mb-3 fw-bold">Connexion</h1>
+
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+                    
                     <label for="inputEmail" class="mb-2">Adresse mail</label>
                     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-3" autocomplete="email" required autofocus>
                     <label for="inputPassword" class="mb-2">Mot de passe</label>
