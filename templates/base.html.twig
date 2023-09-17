@@ -105,13 +105,27 @@
     </body>
 
     <footer class="bg-light">
+
         <div class="container">
 
-            <div class="text-center text-muted p-4">
-                <p class="fw-bold m-0">Edudev @2023</p>
+            <div class="d-none d-lg-flex flex-wrap justify-content-center col-12 text-center text-muted p-4">
+                <a class="footer-link text-decoration-none" href="{{ path('app_add_project') }}"><p class="my-0 mx-2">Déposer un projet</p></a>
+                <a class="footer-link text-decoration-none" href="{{ path('app_project_list') }}"><p class="my-0 mx-2">Trouver un projet</p></a>
+                <a class="footer-link text-decoration-none" href="{{ path('app_home') }}"><p class="col-1 fw-bold my-0 mx-2">Edudev</p></a>
+                <a class="footer-link text-decoration-none" href="{{ path('app_home_about_us') }}"><p class="my-0 mx-2">À propos de nous</p></a>
+                <a class="footer-link text-decoration-none" href="{{ path('app_home_use_policy') }}"><p class="my-0 mx-2">Conditions d'utilisation</p></a>
+            </div>
+
+            <div class="d-flex flex-wrap d-lg-none justify-content-center col-12 text-center text-muted p-4">
+                <a class="footer-link text-decoration-none" href="{{ path('app_home') }}"><p class="col-12 fw-bold my-2 mx-0">Edudev</p></a>
+                <a class="col-12 footer-link text-decoration-none col-12" href="{{ path('app_add_project') }}"><p class="my-2 mx-0">Déposer un projet</p></a>
+                <a class="col-12 footer-link text-decoration-none" href="{{ path('app_project_list') }}"><p class="col-12 my-2 mx-0">Trouver un projet</p></a>
+                <a class="col-12 footer-link text-decoration-none" href="{{ path('app_home_about_us') }}"><p class="col-12 my-2 mx-0">À propos de nous</p></a>
+                <a class="col-12 footer-link text-decoration-none" href="{{ path('app_home_use_policy') }}"><p class="col-12 my-2 mx-0">Conditions d'utilisation</p></a>
             </div>
 
         </div>
+
     </footer>
 
     {% block script %}{% endblock %}
