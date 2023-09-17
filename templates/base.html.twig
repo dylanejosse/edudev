@@ -36,9 +36,9 @@
             </div>
 
             {% if (app.user) %}
-                <a class="btn btn-danger me-2 d-inline d-lg-none" href="{{ path('app_logout') }}">Déconnexion</a>
+                <a class="btn bg-red me-2 d-inline d-lg-none" href="{{ path('app_logout') }}">Déconnexion</a>
             {% else %}
-                <a class="btn btn-success me-2 d-inline d-lg-none" href="{{ path('app_login') }}">Connexion</a>
+                <a class="btn bg-green me-2 d-inline d-lg-none" href="{{ path('app_login') }}">Connexion</a>
             {% endif %}
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,10 +87,10 @@
 
                 {# Display for medium and + screen #}
                 {% if (app.user) %}
-                    <a class="btn btn-danger mx-2 d-none d-lg-inline" href="{{ path('app_logout') }}">Déconnexion</a>
+                    <a class="btn bg-red mx-2 d-none d-lg-inline" href="{{ path('app_logout') }}">Déconnexion</a>
                     <a class="btn btn-light mx-2 d-none d-lg-inline" href="{{ path('app_current_user_profile') }}">Mon profil</a>
                 {% else %}
-                    <a class="btn btn-success mx-2 d-none d-lg-inline" href="{{ path('app_login') }}">Connexion</a>
+                    <a class="btn bg-green mx-2 d-none d-lg-inline" href="{{ path('app_login') }}">Connexion</a>
                     <a class="btn btn-light mx-2 d-none d-lg-inline" href="{{ path('app_register') }}">S'inscrire gratuitement</a>
                 {% endif %}
 
@@ -100,7 +100,7 @@
 
     </nav>
 
-    <body class="height-section">
+    <body>
         {% block body %}{% endblock %}
     </body>
 

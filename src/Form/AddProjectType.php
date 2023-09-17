@@ -153,7 +153,7 @@ class AddProjectType extends AbstractType
                 ])
 
             //->add('user')
-            ->add('valider', SubmitType::class, ['attr' => ['class' => 'btn btn-success my-2']])
+            ->add('valider', SubmitType::class, ['attr' => ['class' => 'btn bg-green my-2']])
         ;
     }
 
