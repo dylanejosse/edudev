@@ -58,6 +58,11 @@ h2
     padding-bottom: 50px;
 }
 
+.footer-link
+{
+    color: #212519;
+}
+
 .bg-green
 {
     background-color: #17C3B2;
