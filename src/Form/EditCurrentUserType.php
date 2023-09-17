@@ -59,7 +59,7 @@ class EditCurrentUserType extends AbstractType
 
             ->add('Modifier', SubmitType::class, [
                 "attr" => [
-                    "class" => "btn btn-warning"
+                    "class" => "btn bg-yellow"
                 ]
             ])
         ;

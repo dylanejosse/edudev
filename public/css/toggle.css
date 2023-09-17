@@ -7,7 +7,7 @@
     display: flex;
     padding: 0;
     position: relative;
-    background: #198756;
+    background: #17C3B2;
     line-height: 3rem;
     border-radius: 3rem;
     margin-left: auto;
@@ -61,7 +61,7 @@
     text-align: center;
     opacity: 0;
     display: block;
-    color: #198756;
+    color: #17C3B2;
     transition: opacity .2s cubic-bezier(.77, 0, .175, 1) .125s;
     will-change: opacity;
     position: absolute;

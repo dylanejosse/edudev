@@ -58,6 +58,34 @@ h2
     padding-bottom: 50px;
 }
 
+.bg-green
+{
+    background-color: #17C3B2;
+    color: #FEF9EF;
+}
+
+.bg-red
+{
+    background-color: #FE6D73;
+    color: #FEF9EF;
+}
+
+.bg-blue
+{
+    background-color: #227C9D;
+    color: #FEF9EF;
+}
+
+.bg-yellow
+{
+    background-color: #FFCB77;
+}
+
+.bg-white
+{
+    background-color: #FEF9EF;
+}
+
 /* Home page */
     /* Top section */
 
@@ -65,7 +93,7 @@ h2
 {
     padding-top: 100px;
     padding-bottom: 100px;
-    background: linear-gradient(#fff, #cfd4ff);
+    background: linear-gradient(#fff,#227C9D);
 }
 
 .price 
@@ -103,7 +131,7 @@ h2
 .edudev-student 
 {
     background-color: #fafffd; 
-    border: solid 1px #71b194;
+    border: solid 1px #17C3B2;
     border-radius: 2%;
 }
 
@@ -129,7 +157,7 @@ h2
 {
     padding-top: 100px;
     padding-bottom: 100px;
-    background: linear-gradient(#fff, #cfffe0);
+    background: linear-gradient(#fff, #17C3B2);
 }
 
 .university-img
@@ -241,7 +269,7 @@ h2
 #add-project-form label:after
 {
     content: " *";
-    color: red;
+    color: #FE6D73;
 }
 
 #add-project-form fieldset label:after
@@ -252,7 +280,7 @@ h2
 #add-project-form fieldset legend:after
 {
     content: " *";
-    color: red;
+    color: #FE6D73;
 }
 
 @media screen and (min-width: 1200px) 
@@ -295,12 +323,12 @@ h2
 
 .input-correct
 {
-    color: green;
+    color: #17C3B2;
 }
 
 .input-incorrect
 {
-    color: red;
+    color: #FE6D73;
 }
 
 /* Single Project Display Page */
@@ -421,7 +449,7 @@ h2
 
 .missing-information
 {
-    color: rgb(249, 160, 160);
+    color: #FE6D73;
 }
 
 /* My projects page */

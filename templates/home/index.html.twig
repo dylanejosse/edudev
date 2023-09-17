@@ -25,7 +25,7 @@
 
                     <h2 class="text-center my-2">Rentrez en collaboration avec d'autres étudiants pour pouvoir développer vos compétences tech et élargir votre réseau.</h6>
 
-                    <a class="btn btn-success mt-3 mb-1 col-9 col-md-6 col-lg-3" href="{{ path('app_add_project') }}">Déposer un projet</a>
+                    <a class="btn bg-red mt-3 mb-1 col-9 col-md-6 col-lg-3" href="{{ path('app_add_project') }}">Déposer un projet</a>
 
                     <p class="price col-12 text-center text-muted">Et bien sûr, tout est gratuit.</p>
 
@@ -72,7 +72,7 @@
                         <p>{{ latestProject.status }}</p>
                         <h5 class="fw-bold">Cursus scolaire</h5>
                         <p>{{ latestProject.getStudyLevel() }}</p>
-                        <a class="btn btn-success" href="{{ path('app_project_display', {id : latestProject.id }) }}">Découvrir</a>
+                        <a class="btn bg-green" href="{{ path('app_project_display', {id : latestProject.id }) }}">Découvrir</a>
                     </div>
 
                 </div>
@@ -307,7 +307,7 @@
             <p>Votre soutien veut dire beaucoup pour nous.</p>
 
             <div class="col-12 d-flex justify-content-center align-items-center">
-                <a class="col-9 col-md-6 col-lg-4 col-xl-3 btn btn-success" href="">Supporter Edudev sur Patreon</a>
+                <a class="col-9 col-md-6 col-lg-4 col-xl-3 btn bg-green" href="">Supporter Edudev sur Patreon</a>
             </div>
 
         </div>
