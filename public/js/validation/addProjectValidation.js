@@ -82,7 +82,7 @@ addProjectForm.addEventListener("submit", function(e)
             behavior: "smooth",
           });
     } 
-    else if (inputDescription.value.trim().length <= 200) 
+    else if (inputDescription.value.trim().length < 200) 
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Description du projet' doit contenir au moins 200 caractères.";
