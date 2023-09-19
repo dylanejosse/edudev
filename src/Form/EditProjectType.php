@@ -165,7 +165,7 @@ class EditProjectType extends AbstractType
             ])
 
         //->add('user')
-        ->add('Modifier', SubmitType::class, ['attr' => ['class' => 'btn bg-yellow my-2']])
+        ->add('modifier', SubmitType::class, ['attr' => ['class' => 'btn bg-yellow my-2']])
     ;
     }
 
