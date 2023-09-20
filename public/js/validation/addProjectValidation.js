@@ -18,6 +18,8 @@ addProjectForm.addEventListener("submit", function(e)
     let inputTimeWeek = document.querySelector("#add_project_time_necessary_week");
     let regexName = /^[\w\s]+/
 
+    console.log(inputName.value);
+
     // trim() permet de supprimer les espaces avant et après l'entrée de l'utilisateur
     if (inputName.value.trim() === "")
     {
