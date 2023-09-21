@@ -1,27 +1,31 @@
-let addProjectForm = document.querySelector("#add_project_form");
+//TODO: Modifier les noms des variables et harmoniser les noms des ids
 
-addProjectForm.addEventListener("submit", function(e)
+let editProjectForm = document.querySelector("#edit_project_form");
+
+editProjectForm.addEventListener("submit", function(e)
 {
     let errors = document.querySelector(".errors");
     errors.innerHTML = "";
 
-    //TODO: Ajouter la vérification sur les checkbox
+    let editInputName = document.querySelector("#edit_project_name");
+    let editInputSummary = document.querySelector("#edit_project_summary");
+    let editInputDescription = document.querySelector("#edit_project_description");
+    let editInputTechnologies = document.querySelector("#edit_project_technologies");
+    let editInputProjectImage = document.querySelector("#edit_project_image");
+    let editInputDuration = document.querySelector("#edit_project_duration");
+    let editInputStudyLevel = document.querySelector("#edit_project_study_level");
+    let editInputNeed = document.querySelector("#edit_project_need_description");
+    let editInputStatus = document.querySelector("#edit_project_status");
+    let editInputTimeWeek = document.querySelector("#edit_project_time_necessary_week");
 
-    let inputName = document.querySelector("#add_project_name");
-    let inputSummary = document.querySelector("#add_project_summary");
-    let inputDescription = document.querySelector("#add_project_description");
-    let inputTechnologies = document.querySelector("#add_project_technologies");
-    let inputProjectImage = document.querySelector("#add_project_image");
-    let inputDuration = document.querySelector("#add_project_duration");
-    let inputStudyLevel = document.querySelector("#add_project_study_level");
-    let inputNeed = document.querySelector("#add_project_need_description");
-    let inputTimeWeek = document.querySelector("#add_project_time_necessary_week");
+    console.log(editInputName);
+
+    //TODO: Ajouter la vérification sur les checkbox
+    //TODO: Vérifier cette regex
     let regexName = /^[\w\s]+/
 
-    console.log(inputName.value);
-
     // trim() permet de supprimer les espaces avant et après l'entrée de l'utilisateur
-    if (inputName.value.trim() === "")
+    if (editInputName.value.trim() === "")
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Nom du projet' ne peut pas être vide";
@@ -34,7 +38,7 @@ addProjectForm.addEventListener("submit", function(e)
           });
           
     } 
-    else if (regexName.test(inputName.value.trim()) === false)
+    else if (regexName.test(editInputName.value.trim()) === false)
     {
         let error = document.createElement("p");
         error.textContent = "Pour le nom du projet, seuls les caractères suivants sont autorisés : [a-z] [A-Z] [0-9]";
@@ -47,7 +51,7 @@ addProjectForm.addEventListener("submit", function(e)
           });
     }
 
-    if (inputSummary.value.trim() === "")
+    if (editInputSummary.value.trim() === "")
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Résumé du projet' ne peut pas être vide";
@@ -59,7 +63,7 @@ addProjectForm.addEventListener("submit", function(e)
             behavior: "smooth",
           });
     } 
-    else if (inputSummary.value.trim().length >= 100)
+    else if (editInputSummary.value.trim().length >= 100)
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Résumé du projet' doit contenir au maximum 100 caractères";
@@ -72,7 +76,7 @@ addProjectForm.addEventListener("submit", function(e)
           });
     }
 
-    if (inputDescription.value.trim() === "")
+    if (editInputDescription.value.trim() === "")
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Description du projet' ne peut pas être vide";
@@ -84,7 +88,7 @@ addProjectForm.addEventListener("submit", function(e)
             behavior: "smooth",
           });
     } 
-    else if (inputDescription.value.trim().length < 200) 
+    else if (editInputDescription.value.trim().length < 200) 
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Description du projet' doit contenir au moins 200 caractères.";
@@ -97,7 +101,7 @@ addProjectForm.addEventListener("submit", function(e)
           });
     }
 
-    if (inputTechnologies.value === "")
+    if (editInputTechnologies.value === "")
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Technologies utilisées sur ce projet' ne peut pas être vide";
@@ -110,7 +114,7 @@ addProjectForm.addEventListener("submit", function(e)
           });
     }
 
-    if (inputProjectImage.value === "")
+    if (editInputProjectImage.value === "")
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Image de la technologie principale' ne peut pas être vide";
@@ -123,7 +127,7 @@ addProjectForm.addEventListener("submit", function(e)
           });
     }
 
-    if (inputDuration.value === "")
+    if (editInputDuration.value === "")
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Durée estimée du projet' ne peut pas être vide";
@@ -136,7 +140,7 @@ addProjectForm.addEventListener("submit", function(e)
           });
     }
 
-    if (inputStudyLevel.value === "")
+    if (editInputStudyLevel.value === "")
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Niveau d'études souhaité des participants' ne peut pas être vide";
@@ -149,7 +153,7 @@ addProjectForm.addEventListener("submit", function(e)
           });
     }
 
-    if (inputNeed.value.trim() === "")
+    if (editInputNeed.value.trim() === "")
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Besoin du projet' ne peut pas être vide";
@@ -161,7 +165,7 @@ addProjectForm.addEventListener("submit", function(e)
             behavior: "smooth",
           });
     } 
-    else if (inputDescription.value.trim().length <= 100) 
+    else if (editInputDescription.value.trim().length <= 100) 
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Besoin du projet' doit contenir au moins 100 caractères.";
@@ -174,7 +178,7 @@ addProjectForm.addEventListener("submit", function(e)
           });
     }
 
-    if (inputTimeWeek.value === "")
+    if (editInputTimeWeek.value === "")
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Estimation du temps à consacrer au projet par semaine (par participant)' ne peut pas être vide";
@@ -191,75 +195,75 @@ addProjectForm.addEventListener("submit", function(e)
 
 // Project Summary counter
 
-let inputProjectSummary = document.querySelector("#project-summary-input");
-let projectSummaryCounter = document.querySelector("#project-summary-counter");
-projectSummaryCounter.classList.add("input-incorrect");
+let editInputProjectSummary = document.querySelector("#edit-project-summary-input");
+let editProjectSummaryCounter = document.querySelector("#edit-project-summary-counter");
+editProjectSummaryCounter.classList.add("input-incorrect");
 
-function projectSummaryCount (e)
+function editProjectSummaryCount (e)
 {
 
-    projectSummaryCounter.classList.remove("input-correct");
-    projectSummaryCounter.classList.remove("input-incorrect")
+    editProjectSummaryCounter.classList.remove("input-correct");
+    editProjectSummaryCounter.classList.remove("input-incorrect")
 
-    projectSummaryCounter.innerHTML = e.target.value.length;
+    editProjectSummaryCounter.innerHTML = e.target.value.length;
 
-    if (projectSummaryCounter.innerHTML <= 100 && projectSummaryCounter.innerHTML > 0 )
+    if (editProjectSummaryCounter.innerHTML <= 100 && editProjectSummaryCounter.innerHTML > 0 )
     {
-        projectSummaryCounter.classList.add("input-correct")
+        editProjectSummaryCounter.classList.add("input-correct")
     } else
     {
-        projectSummaryCounter.classList.add("input-incorrect")
+        editProjectSummaryCounter.classList.add("input-incorrect")
     }
 }
 
-inputProjectSummary.addEventListener('keyup', projectSummaryCount);
+editInputProjectSummary.addEventListener('keyup', editProjectSummaryCount);
 
 // Project Description Counter
 
-let inputProjectDescription = document.querySelector("#project-description-input");
-let projectDescriptionCounter = document.querySelector("#project-description-counter");
-projectDescriptionCounter.classList.add("input-incorrect");
+let editInputProjectDescription = document.querySelector("#edit-project-description-input");
+let editProjectDescriptionCounter = document.querySelector("#edit-project-description-counter");
+editProjectDescriptionCounter.classList.add("input-incorrect");
 
-function projectDescriptionCount (e)
+function editProjectDescriptionCount (e)
 {
 
-    projectDescriptionCounter.classList.remove("input-correct");
-    projectDescriptionCounter.classList.remove("input-incorrect")
+    editProjectDescriptionCounter.classList.remove("input-correct");
+    editProjectDescriptionCounter.classList.remove("input-incorrect")
 
-    projectDescriptionCounter.innerHTML = e.target.value.length;
+    editProjectDescriptionCounter.innerHTML = e.target.value.length;
 
-    if (projectDescriptionCounter.innerHTML >= 200 && projectDescriptionCounter.innerHTML > 0 )
+    if (editProjectDescriptionCounter.innerHTML >= 200 && editProjectDescriptionCounter.innerHTML > 0 )
     {
-        projectDescriptionCounter.classList.add("input-correct")
+        editProjectDescriptionCounter.classList.add("input-correct")
     } else
     {
-        projectDescriptionCounter.classList.add("input-incorrect")
+        editProjectDescriptionCounter.classList.add("input-incorrect")
     }
 }
 
-inputProjectDescription.addEventListener('keyup', projectDescriptionCount);
+editInputProjectDescription.addEventListener('keyup', editProjectDescriptionCount);
 
 // Project Need Counter
 
-let inputProjectNeed = document.querySelector("#project-need-input");
-let projectNeedCounter = document.querySelector("#project-need-counter");
-projectNeedCounter.classList.add("input-incorrect");
+let editInputProjectNeed = document.querySelector("#edit-project-need-input");
+let editProjectNeedCounter = document.querySelector("#edit-project-need-counter");
+editProjectNeedCounter.classList.add("input-incorrect");
 
-function projectNeedCount (e)
+function editProjectNeedCount (e)
 {
 
-    projectNeedCounter.classList.remove("input-correct");
-    projectNeedCounter.classList.remove("input-incorrect")
+    editProjectNeedCounter.classList.remove("input-correct");
+    editProjectNeedCounter.classList.remove("input-incorrect")
 
-    projectNeedCounter.innerHTML = e.target.value.length;
+    editProjectNeedCounter.innerHTML = e.target.value.length;
 
-    if (projectNeedCounter.innerHTML >= 100 && projectNeedCounter.innerHTML > 0 )
+    if (editProjectNeedCounter.innerHTML >= 100 && editProjectNeedCounter.innerHTML > 0 )
     {
-        projectNeedCounter.classList.add("input-correct")
+        editProjectNeedCounter.classList.add("input-correct")
     } else
     {
-        projectNeedCounter.classList.add("input-incorrect")
+        editProjectNeedCounter.classList.add("input-incorrect")
     }
 }
 
-inputProjectNeed.addEventListener('keyup', projectNeedCount);
+editInputProjectNeed.addEventListener('keyup', editProjectNeedCount);

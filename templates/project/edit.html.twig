@@ -9,11 +9,90 @@
         <div class="row">
             <h1 class="text-center my-5">Modifier mon projet</h1>
 
+            <p class="text-center fst-italic">Les champs accompagnés du signe <span class="text-danger fw-bold">*</span> sont obligatoires (et oui, ils sont tous obligatoires).</p>
+
             <div class="my-3">
-                {{ form(form) }}
+            <div class="errors rounded"></div>
+                {{ form_start(form, {attr:{'novalidate': 'novalidate', 'id': "edit_project_form"}}) }}
+
+                <div class="d-flex flex-wrap" id="edit-project-form">
+
+                    <div class="col-12 col-xl-5 p-xl-3 pe-xl-5">
+
+                        <div>{{ form_row(form.name) }}</div>
+
+                        <div id='edit-project-summary-input'>
+                            {{ form_row(form.summary) }}
+                        </div>
+
+                        <div class=" d-flex col-12">
+                            <p class="m-0 col-6 fst-italic text-secondary">100 caractères <span class="text-decoration-underline">max</span></p>
+                            <p class="m-0 col-6 text-end"><span id="edit-project-summary-counter">0</span> / 100 caractères</p>
+                        </div>
+
+                        <div id='edit-project-description-input'>
+                            {{ form_row(form.description) }}
+                        </div>
+                        <div class=" d-flex col-12">
+                            <p class="m-0 col-6 fst-italic text-secondary">200 caractères <span class="text-decoration-underline">min</span></p>
+                            <p class="m-0 col-6 text-end"><span id="edit-project-description-counter">0</span> / 200 caractères</p>
+                        </div>
+
+                    </div>
+
+                    <div class="edit-project-right-section col-12 col-xl-7 p-xl-3 ps-xl-4 rounded">
+
+                        <div>
+                            {{ form_row(form.technologies) }}
+                        </div>
+
+                        <div>
+                            {{ form_row(form.image) }}
+                        </div>
+
+                        <div>
+                            {{ form_row(form.duration) }}
+                        </div>
+
+                        <div>
+                            {{ form_row(form.status) }}
+                        </div>
+
+                        <div>
+                            {{ form_row(form.study_level) }}
+                        </div>
+
+                        <div id="edit-project-need-input">
+                            {{ form_row(form.need_description) }}
+                        </div>
+                        <div class=" d-flex col-12">
+                            <p class="m-0 col-6 fst-italic text-secondary">100 caractères <span class="text-decoration-underline">min</span></p>
+                            <p class="m-0 col-6 text-end"><span id="edit-project-need-counter">0</span> / 100 caractères</p>
+                        </div>
+
+                        <div>
+                            {{ form_row(form.time_necessary_week) }}
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 d-flex justify-content-center justify-content-xl-end">
+                        {{ form_row(form.modifier) }}
+                    </div>
+
+                </div>
+
+                {{ form_end(form) }}
+
             </div>
             
         </div>
+
     </div>
+
 </section>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ asset("js/validation/editProjectValidation.js") }}"></script>
 {% endblock %}

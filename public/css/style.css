@@ -290,7 +290,7 @@ h2
 
 @media screen and (min-width: 1200px) 
 {
-    #project-right-section
+    .project-right-section
     {
         border-left: 2px #cecece solid;
         border-top: 2px #cecece solid;
@@ -333,6 +333,35 @@ h2
 
 .input-incorrect
 {
+    color: #FE6D73;
+}
+
+/* Modify a Project */
+
+@media screen and (min-width: 1200px) 
+{
+    .edit-project-right-section
+    {
+        border-left: 2px #cecece solid;
+        border-top: 2px #cecece solid;
+        background-color: #fdf1d1;
+    }
+}
+
+#edit-project-form label:after
+{
+    content: " *";
+    color: #FE6D73;
+}
+
+#edit-project-form fieldset label:after
+{
+    content: "";
+}
+
+#edit-project-form fieldset legend:after
+{
+    content: " *";
     color: #FE6D73;
 }
 
