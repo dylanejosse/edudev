@@ -71,11 +71,14 @@
 
                     </li>
 
+
+                    {% if (app.user) %}
                     <li class="nav-item d-md-none">
 
                         <a class="nav-link click-scroll" href="{{ path('app_current_user_profile') }}">Mon Profil</a>
 
                     </li>
+                    {% endif %}
 
                 </ul>
 
