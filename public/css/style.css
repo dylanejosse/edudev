@@ -348,6 +348,23 @@ h2
     }
 }
 
+#edit-project-form label:after
+{
+    content: " *";
+    color: #FE6D73;
+}
+
+#edit-project-form fieldset label:after
+{
+    content: "";
+}
+
+#edit-project-form fieldset legend:after
+{
+    content: " *";
+    color: #FE6D73;
+}
+
 /* Single Project Display Page */
 
 .single-project
