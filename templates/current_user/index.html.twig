@@ -23,12 +23,12 @@
                 
                 <h2 class="informations-profile text-center col-12">Informations générales</h2>
 
-                <div class="text-center mt-3 col-12">
+                <article class="text-center mt-3 col-12">
                     <p class="fw-bold">Mon adresse mail</p>
                     <p>{{ currentUser.email }}</p>
-                </div>
+                </article>
 
-                <div class="text-center my-3 col-12">
+                <article class="text-center my-3 col-12">
 
                     <p class="fw-bold">Mon Pseudo</p>
                     {% if currentUser.username == false %}
@@ -37,7 +37,7 @@
                     <p>{{ currentUser.username }}</p>
                     {% endif %}
                         
-                </div>
+                </article>
 
                 <div class="col-12 d-none d-md-flex justify-content-center mb-3">
                     <a class="col-6 btn bg-red" href="{{ path("app_current_user_delete")}}">Supprimer le compte</a>
@@ -57,39 +57,40 @@
 
                     <div class="col-12 d-flex flex-wrap align-items-start justify-content-md-between">
 
-                    <div class="text-center my-3 col-12 col-md-5 border rounded p-3">
-                        <p class="fw-bold">Mon Niveau d'études</p>
+                        <article class="text-center my-3 col-12 col-md-5 border rounded p-3">
+                            <p class="fw-bold">Mon Niveau d'études</p>
 
-                        {% if currentUser.studyLevel == false %}
-                        <p class="missing-information m-0">Vous n'avez pas communiqué votre niveau d'études</p>
-                        {% else %}
-                        <p class="m-0">{{ currentUser.studyLevel }}</p>
-                        {% endif %}
-                        </div>
+                            {% if currentUser.studyLevel == false %}
+                            <p class="missing-information m-0">Vous n'avez pas communiqué votre niveau d'études</p>
+                            {% else %}
+                            <p class="m-0">{{ currentUser.studyLevel }}</p>
+                            {% endif %}
 
-                    <div class="text-center my-3 col-12 col-md-5 border rounded p-3">
-                        <p class="fw-bold">Ma disponibilité (semaine)</p>
+                        </article>
 
-                        {% if currentUser.timeAvailableWeek == false %}
-                        <p class="missing-information m-0">Vous n'avez pas communiqué vos disponibilté hebdomadaire</p>
-                        {% else %}
-                        <p class="m-0">{{ currentUser.timeAvailableWeek }}</p>
-                        {% endif %}
-                    </div>
+                        <article class="text-center my-3 col-12 col-md-5 border rounded p-3">
+                            <p class="fw-bold">Ma disponibilité (semaine)</p>
 
-                    <div class="text-center my-3 col-12 col-md-5 border rounded p-3">
-                        <p class="fw-bold">Les technologies qui m'intéressent</p>
+                            {% if currentUser.timeAvailableWeek == false %}
+                            <p class="missing-information m-0">Vous n'avez pas communiqué vos disponibilté hebdomadaire</p>
+                            {% else %}
+                            <p class="m-0">{{ currentUser.timeAvailableWeek }}</p>
+                            {% endif %}
+                        </article>
 
-                        {# Verification if a technologie is specified by the user #}
-                        {% if currentUser.technologies|length > 0 %}
-                        {% for technologie in currentUser.technologies %}
-                        <p class="m-0">{{ technologie.name }}</p>
-                        {% endfor %}
-                        {% else %}
-                        <p class="missing-information m-0">Vous n'avez pas communiqué les technologies qui vous intéressent</p>
-                        {% endif %}
-    
-                    </div>
+                        <article class="text-center my-3 col-12 col-md-5 border rounded p-3">
+                            <p class="fw-bold">Les technologies qui m'intéressent</p>
+
+                            {# Verification if a technologie is specified by the user #}
+                            {% if currentUser.technologies|length > 0 %}
+                            {% for technologie in currentUser.technologies %}
+                            <p class="m-0">{{ technologie.name }}</p>
+                            {% endfor %}
+                            {% else %}
+                            <p class="missing-information m-0">Vous n'avez pas communiqué les technologies qui vous intéressent</p>
+                            {% endif %}
+        
+                        </article>
 
                     </div>
 
