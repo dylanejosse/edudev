@@ -129,26 +129,9 @@ class ProjectController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $data = $form->getData();
-
-            $project->setName($data->getName());
-            $project->setSummary($data->getSummary());
-            $project->setDescription($data->getDescription());
+            
             $project->setCreatedAt(new DateTimeImmutable());
-            $project->setStudyLevel($data->getStudyLevel());
-
-            foreach ($data->getTechnologies() as $technology)
-            {
-                $project->addTechnology($technology);
-            };
-
-            $project->setNeedDescription($data->getNeedDescription());
-            $project->setDuration($data->getDuration());
-            $project->setStatus($data->getStatus());
-            $project->setTimeNecessaryWeek($data->getTimeNecessaryWeek());
-            $project->setImage($data->getImage());
             $project->setUser($currentUser);
-
 
             $em->persist($project);
             $em->flush();

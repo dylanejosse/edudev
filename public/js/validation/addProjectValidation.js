@@ -2,10 +2,9 @@ let addProjectForm = document.querySelector("#add_project_form");
 
 addProjectForm.addEventListener("submit", function(e)
 {
+
     let errors = document.querySelector(".errors");
     errors.innerHTML = "";
-
-    //TODO: Ajouter la vérification sur les checkbox
 
     let inputName = document.querySelector("#add_project_name");
     let inputSummary = document.querySelector("#add_project_summary");
@@ -97,7 +96,7 @@ addProjectForm.addEventListener("submit", function(e)
           });
     }
 
-    if (inputTechnologies.value === "")
+    if (!inputTechnologies.some())
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Technologies utilisées sur ce projet' ne peut pas être vide";
@@ -109,6 +108,7 @@ addProjectForm.addEventListener("submit", function(e)
             behavior: "smooth",
           });
     }
+
 
     if (inputProjectImage.value === "")
     {
