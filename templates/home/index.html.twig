@@ -26,7 +26,7 @@
 
                     <h1 class="text-center my-2">Des projets tech pour pratiquer</h1>
 
-                    <h2 class="text-center my-2">Rentrez en collaboration avec d'autres étudiants pour pouvoir développer vos compétences tech et élargir votre réseau.</h6>
+                    <p class="text-center my-2 fw-bold fs-4">Rentrez en collaboration avec d'autres étudiants pour pouvoir développer vos compétences tech et élargir votre réseau.</p>
 
                     <a class="btn bg-red mt-3 mb-1 col-9 col-md-6 col-lg-3" href="{{ path('app_add_project') }}">Déposer un projet</a>
 
@@ -50,7 +50,7 @@
 
         <div class="row">
 
-            <h3 class="title-section text-center my-2">Le Projet à la Une</h3>
+            <h2 class="title-section text-center my-2">Le Projet à la Une</h2>
 
             <div class="mx-auto d-flex flex-wrap my-2 justify-content-center">
 
@@ -63,17 +63,17 @@
 
                     <!-- Project Details -->
                     <div class="col-12 col-md-5 m-auto">
-                        <h4 class="fw-bold">{{ latestProject.name }}</h5>
+                        <h3 class="fw-bold">{{ latestProject.name }}</h3>
                         <p>{{ latestProject.summary }}</p>
-                        <h5 class="fw-bold">Stack Technique</h5>
+                        <h4 class="fw-bold fs-5">Stack Technique</h4>
                         <p>
                         {% for techno in latestProject.technologies %}
                             {{ techno.name }} 
                         {% endfor %}
                         </p>
-                        <h5 class="fw-bold">Avancée du projet</h5>
+                        <h4 class="fw-bold fs-5">Avancée du projet</h4>
                         <p>{{ latestProject.status }}</p>
-                        <h5 class="fw-bold">Cursus scolaire</h5>
+                        <h4 class="fw-bold fs-5">Cursus scolaire</h4>
                         <p>{{ latestProject.getStudyLevel() }}</p>
                         <a class="btn bg-green" href="{{ path('app_project_display', {id : latestProject.id }) }}">Découvrir</a>
                     </div>
@@ -96,7 +96,7 @@
 
         <div class="row">
 
-            <h3 class="title-section text-center mt-2 mb-4">Une Utilisation Simple et Optimisée</h3>
+            <h2 class="title-section text-center mt-2 mb-4">Une Utilisation Simple et Optimisée</h2>
 
             <!-- Toggle to know what informations need to be at screen -->
 
@@ -131,28 +131,28 @@
 
                     <article class="edudev-features p-4 col-12 col-sm-5 m-2 m-md-3 d-flex justify-content-center">
                         <div>
-                            <h5 class="fw-bold">Exposez votre projet</h5>
+                            <h3 class="fw-bold">Exposez votre projet</h3>
                             <p class="m-0">Décrivez en détail votre projet : que ce soit ses objectifs, son statut actuel, l'équipe mise en place (ou souhaitée) ou encore les technologies utilisées, toutes les informations utiles vous seront demandées à cette étape.</p>
                         </div>
                     </article>
 
                     <article class="edudev-features p-4 col-12 col-sm-5 m-2 m-md-3 d-flex justify-content-center">
                         <div>
-                            <h5 class="fw-bold">Énoncez vos besoins</h5>
+                            <h3 class="fw-bold">Énoncez vos besoins</h3>
                             <p class="m-0">Vous recherchez un développeur React ? Un développeur Flutter ? Un expert Docker ? Ou encore un webdesigner ? Définissez les besoins de votre projet pour plus de clarté et pour le rendre plus attractif aux yeux des autres étudiants.</p>
                         </div>
                     </article>
 
                     <article class="edudev-features p-4 col-12 col-sm-5 m-2 m-md-3 d-flex justify-content-center">
                         <div>
-                            <h5 class="fw-bold">Collaborez entre étudiants</h5>
+                            <h3 class="fw-bold">Collaborez entre étudiants</h3>
                             <p class="m-0">Les étudiants intéressés par votre projet auront alors accès à toutes ces informations et pourront vous contacter pour potentiellement démarrer une nouvelle collaboration et faire avancer vos idées.</p>
                         </div>
                     </article>
 
                     <article class="edudev-features p-4 col-12 col-sm-5 m-2 m-md-3 d-flex justify-content-center">
                         <div>
-                            <h5 class="fw-bold">Atteignez vos objectifs</h5>
+                            <h3 class="fw-bold">Atteignez vos objectifs</h3>
                             <p class="m-0">On a tous connu ces projets qui ne verront jamais le jour, par manque de temps ou de compétences. Entourez-vous pour pouvoir les terminer, remplir votre portfolio et faire monter en flèches vos compétences.</p>
                         </div>
                     </article>
@@ -169,28 +169,28 @@
 
                     <article class="edudev-student p-4 col-12 col-sm-5 m-2 m-md-3 d-flex justify-content-center">
                         <div>
-                            <h5 class="fw-bold">Renseignez votre profil</h5>
+                            <h3 class="fw-bold">Renseignez votre profil</h3>
                             <p class="m-0">Décrivez en détail vos compétences et les technologies sur lesquelles vous souhaitez travailler. Que ce soit sur des langages de programmation ou des outils spécifiques, pratiquez et soyez plus attirants sur le marché du travail.</p>
                         </div>
                     </article>
 
                     <article class="edudev-student p-4 col-12 col-sm-5 m-2 m-md-3 d-flex justify-content-center">
                         <div>
-                            <h5 class="fw-bold">Découvrez des projets</h5>
+                            <h3 class="fw-bold">Découvrez des projets</h3>
                             <p class="m-0">Retrouvez une liste de projets ou d'idées liées à la technologie sur lesquels vous pourrez travailler en collaboration avec d'autres étudiants. Participez à des programmes innovants et remplissez votre portfolio pour gagner en crédibilité.</p>
                         </div>
                     </article>
 
                     <article class="edudev-student p-4 col-12 col-sm-5 m-2 m-md-3 d-flex justify-content-center">
                         <div>
-                            <h5 class="fw-bold">Augmentez vos compétences</h5>
+                            <h3 class="fw-bold">Augmentez vos compétences</h3>
                             <p class="m-0">Vous souhaitez améliorer vos skills en développement back ? En développement mobile ? Ou tout simplement vous initier à de nouveaux outils ? Trouvez le projet qui correspond à vos objectifs et commencez dès maintenant cette nouvelle aventure.</p>
                         </div>
                     </article>
 
                     <article class="edudev-student p-4 col-12 col-sm-5 m-2 m-md-3 d-flex justify-content-center">
                         <div>
-                            <h5 class="fw-bold">Élargissez votre réseau</h5>
+                            <h3 class="fw-bold">Élargissez votre réseau</h3>
                             <p class="m-0">Emmagasinez de l'expérience professionnelle tout en travaillant avec de nouvelles personnes, apprenez de leurs expériences respectives, partagez les vôtres et construisez ensemble de réelles relations professionnelles et durables.</p>
                         </div>
                     </article>
@@ -213,7 +213,7 @@
 
         <div class="row">
 
-            <h3 class="title-section text-center mt-2 mb-4">Des Technologies Populaires</h3>
+            <h2 class="title-section text-center mt-2 mb-4">Des Technologies Populaires</h2>
 
             <div class="mx-auto d-flex flex-wrap my-2 justify-content-center">
 
@@ -303,7 +303,7 @@
 
         <div class="row text-center">
 
-            <h3 class="title-section mt-2 mb-4">Soutenez-nous</h3>
+            <h2 class="title-section mt-2 mb-4">Soutenez-nous</h2>
 
             <p>Supportez Edudev sur Patreon et aidez-nous à rendre ce projet encore meilleur.</p>
 
