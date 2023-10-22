@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Mes Informations{% endblock %}
+{% block meta_description %}
+<meta name="description" content="Accédez à toutes les informations de votre profil Edudev. Vous retrouverez notamment les technologies que vous pratiquez, vos disponibilités ou encore votre niveau d'études.">
+{% endblock %}
 
 {% block stylesheets %}
     {# My style.css Sheet's link #}
@@ -72,7 +75,7 @@
                             <p class="fw-bold">Ma disponibilité (semaine)</p>
 
                             {% if currentUser.timeAvailableWeek == false %}
-                            <p class="missing-information m-0">Vous n'avez pas communiqué vos disponibilté hebdomadaire</p>
+                            <p class="missing-information m-0">Vous n'avez pas communiqué vos disponibiltés hebdomadaires</p>
                             {% else %}
                             <p class="m-0">{{ currentUser.timeAvailableWeek }}</p>
                             {% endif %}

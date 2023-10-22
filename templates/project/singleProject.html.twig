@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}{{ currentProject.name }}{% endblock %}
+{% block meta_description %}
+<meta name="description" content="Retrouvez toutes les informations du projet, les technologies utilisées, la description de celui=ci ainsi que le besoin évoqué par le porteur du projet.">
+{% endblock %}
 
 {% block stylesheets %}
     {# My style.css Sheet's link #}
@@ -93,7 +96,7 @@
 
                     <p class="text-break"><span class="fst-italic text-decoration-underline">Description </span>: {{ currentProject.description|nl2br }}</p>
 
-                    <p>Pour participer à ce projet, il est recommandé par le project owner d'un certain nombre d'heures par semaine. Ici, {{ currentProject.timeNecessaryWeek }} serait idéal !</p>
+                    <p>Pour participer à ce projet, il est recommandé par le project owner un certain nombre d'heures par semaine. Ici, {{ currentProject.timeNecessaryWeek }} serait idéal !</p>
                 
                 </div>
 

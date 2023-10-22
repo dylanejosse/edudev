@@ -1,6 +1,5 @@
 let validationForm = document.querySelector("#registration_form");
 
-//TODO: Vérifier si les regex sont complètes
 let regexEmail = /^[\w\.]+@[\w]+\.[a-z]+$/;
 let specialCharacters = /[\!\$\^\+\*\.\?\-@#\/;=€%&_:]/;
 
