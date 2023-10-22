@@ -19,7 +19,7 @@
         
                     <h1 class="my-2">Des projets en veux-tu ? En voilà !</h1>
 
-                    <h2 class="my-2">Retrouvez dès maintenant la liste de tous les projets actuellement présentés sur Edudev !</h2>
+                    <p class="my-2 fw-bold fs-4">Retrouvez dès maintenant la liste de tous les projets actuellement présentés sur Edudev !</p>
 
                     <p class="price col-12 text-muted mt-4">Encore et encore gratuit.</p>
 
@@ -37,7 +37,7 @@
 
         <div class="container-fluid">
 
-            <h3 class="title-section text-center my-2 p-0">Nos projets</h3>
+            <h2 class="title-section text-center my-2 p-0">Nos projets</h2>
 
             {% for project in allProjects %}
             <div class="d-flex flex-wrap justify-content-center">
@@ -51,17 +51,17 @@
 
                     <!-- Project Details -->
                     <div class="col-12 col-md-5 m-auto">
-                        <h4 class="fw-bold">{{ project.name }}</h5>
+                        <h3 class="fw-bold">{{ project.name }}</h3>
                         <p class="text-break">{{ project.summary }}</p>
-                        <h5 class="fw-bold">Stack Technique</h5>
+                        <h4 class="fw-bold fs-5">Stack Technique</h4>
                         <p>
                         {% for techno in project.technologies %}
                             {{ techno.name }} 
                         {% endfor %}
                         </p>
-                        <h5 class="fw-bold">Avancé du projet</h5>
+                        <h4 class="fw-bold fs-5">Avancé du projet</h4>
                         <p>{{ project.status }}</p>
-                        <h5 class="fw-bold">Cursus scolaire</h5>
+                        <h4 class="fw-bold fs-5">Cursus scolaire</h4>
                         <p>{{ project.getStudyLevel() }}</p>
                         <a class="btn bg-green" href="{{ path('app_project_display', {id : project.id }) }}">Découvrir</a>
                     </div>
