@@ -58,6 +58,10 @@ class Project
     /**
      * @ORM\ManyToMany(targetEntity=Technology::class, inversedBy="projects")
      * @Assert\NotBlank
+     * @Assert\Count(
+     *  min = 1,
+     *  minMessage = "Vous devez choisir au moins une technologie !"
+     * )
      */
     private $technologies;
 
