@@ -96,7 +96,7 @@ addProjectForm.addEventListener("submit", function(e)
           });
     }
 
-    if (!inputTechnologies.some())
+    if (!inputTechnologies.value === "")
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Technologies utilisées sur ce projet' ne peut pas être vide";
