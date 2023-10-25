@@ -14,6 +14,7 @@ addProjectForm.addEventListener("submit", function(e)
     let inputDuration = document.querySelector("#add_project_duration");
     let inputStudyLevel = document.querySelector("#add_project_study_level");
     let inputNeed = document.querySelector("#add_project_need_description");
+    let inputStatut = document.querySelector("#add_project_status");
     let inputTimeWeek = document.querySelector("#add_project_time_necessary_week");
     let regexName = /^[\w\s]+/
 
@@ -96,7 +97,7 @@ addProjectForm.addEventListener("submit", function(e)
           });
     }
 
-    if (!inputTechnologies.value === "")
+    if (inputTechnologies.value === "")
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Technologies utilisées sur ce projet' ne peut pas être vide";
@@ -127,6 +128,19 @@ addProjectForm.addEventListener("submit", function(e)
     {
         let error = document.createElement("p");
         error.textContent = "Le champ 'Durée estimée du projet' ne peut pas être vide";
+        errors.appendChild(error);
+        e.preventDefault();
+        window.scrollTo({
+            top: 100,
+            left: 100,
+            behavior: "smooth",
+          });
+    }
+
+    if (inputStatut.value === "")
+    {
+        let error = document.createElement("p");
+        error.textContent = "Le champ 'Statut actuel' ne peut pas être vide";
         errors.appendChild(error);
         e.preventDefault();
         window.scrollTo({
