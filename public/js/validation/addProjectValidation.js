@@ -253,7 +253,7 @@ function projectNeedCount (e)
 
     projectNeedCounter.innerHTML = e.target.value.length;
 
-    if (projectNeedCounter.innerHTML >= 100 && projectNeedCounter.innerHTML > 0 )
+    if (projectNeedCounter.innerHTML <= 100 && projectNeedCounter.innerHTML > 0 )
     {
         projectNeedCounter.classList.add("input-correct")
     } else
